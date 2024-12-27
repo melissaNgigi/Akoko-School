@@ -1,0 +1,184 @@
+/* Department Section Styles */
+.department-section {
+    padding: 6rem 0 4rem;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Department Header Styles */
+.department-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.department-header h1 {
+    color: #003366;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.hod-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.hod-profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #003366;
+}
+
+.hod-info {
+    text-align: left;
+}
+
+.hod-info h2 {
+    color: #003366;
+    margin-bottom: 0.5rem;
+}
+
+.hod-info .title {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.hod-info .qualification {
+    color: #333;
+}
+
+/* Department Description Styles */
+.department-description {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.department-description h2 {
+    color: #003366;
+    margin-bottom: 1.5rem;
+}
+
+.department-description p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Department Stats Styles */
+.department-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    max-width: 200px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #003366;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    color: #666;
+}
+
+/* Staff Section Styles */
+.staff-section {
+    margin-top: 4rem;
+}
+
+.staff-section h2 {
+    color: #003366;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.table-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.staff-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.staff-table th,
+.staff-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.staff-table th {
+    background-color: #003366;
+    color: white;
+    font-weight: 600;
+}
+
+.staff-table tr:last-child td {
+    border-bottom: none;
+}
+
+.staff-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .department-section {
+        padding-top: 8rem;
+    }
+
+    .hod-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hod-info {
+        text-align: center;
+    }
+
+    .department-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .staff-table {
+        min-width: 600px;
+    }
+} 

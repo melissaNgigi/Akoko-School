@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission, Vision & Values - St. Paul's Akoko Secondary School</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/mission.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+<nav class="navbar">
+    <div class="nav-brand">
+        <button class="menu-btn">☰</button>
+        <img src="images/logo.png" alt="St. Paul's Akoko Logo" class="logo">
+        <span class="school-name">St. Paul's Akoko Secondary School</span>
+    </div>
+    
+    <div class="home-link">
+        <a href="Home.html">Home</a>
+      </div>
+
+    <div class="nav-links">
+        <div class="dropdown">
+            <a href="about.html">About Us</a>
+            <div class="dropdown-content">
+                <a href="mission.html">Mission, Vision & Values</a>
+                <a href="principals-message.html">Principal's Message</a>
+                <a href="management.html">Management</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="history.html">History</a>
+            <div class="dropdown-content">
+                <a href="history.html">History</a>
+                <a href="principals.html">Past Principals</a>
+                <a href="performance.html">KCSE Performance</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="programmes.html">Programmes</a>
+            <div class="dropdown-content">
+                <div class="nested-dropdown">
+                    <a href="academics.html">Academics</a>
+                    <div class="nested-content">
+                        <a href="mathematics.html">Mathematics Department</a>
+                        <a href="science.html">Science Department</a>
+                        <a href="languages.html">Languages Department</a>
+                        <a href="humanities.html">Humanities Department</a>
+                        <a href="technical.html">Technical Department</a>
+                    </div>
+                </div>
+                <a href="curriculum.html">Co-curricular Activities</a>
+            </div>
+        </div>
+
+        <a href="facilities.html">Facilities</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+    <!-- Hero Banner Section -->
+    <section class="hero-banner" style="background-image: url('images/mission.jpg'); background-size: cover; background-position: center;">
+        <div class="overlay">
+            <div class="overlay-text">
+                <h1>St. Paul's Akoko Secondary School</h1>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Mission, Vision & Values Section -->
+        <section class="mission-section">
+            <p class="mission-text">St. Paul's Akoko Secondary School is committed to providing quality education 
+                and nurturing well-rounded individuals. Our dedicated staff and modern facilities 
+                create an ideal environment for academic excellence and personal growth.</p>
+            <div class="container">
+                <h2 class="section-title">Mission, Vision & Values</h2>
+                
+                <div class="mission-content">
+                    <div class="mission-box">
+                        <h3>Our Mission</h3>
+                        <p>To provide quality education that nurtures academic excellence, moral values, and holistic development of students, preparing them to be responsible citizens and future leaders.</p>
+                    </div>
+
+                    <div class="mission-box">
+                        <h3>Our Vision</h3>
+                        <p>To be a leading institution in academic excellence and character formation, producing well-rounded individuals who will positively impact society.</p>
+                    </div>
+
+                    <div class="mission-box">
+                        <h3>Our Core Values</h3>
+                        <ul>
+                            <li>Excellence in Education</li>
+                            <li>Integrity and Moral Values</li>
+                            <li>Respect and Discipline</li>
+                            <li>Innovation and Creativity</li>
+                            <li>Community Service</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Address: West Migwena, Bondo</p>
+                <p>Phone: +254714747213</p>
+                <p>Email: Akokosecondary@yahoo.com </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about/mission.html">Mission & Vision</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+           
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+                menuBtn.textContent = '☰';
+            }
+        });
+    </script>
+</body>
+</html>
+

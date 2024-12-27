@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Department - St. Paul's Akoko Secondary School</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/departments.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="images/logo.png" alt="St. Paul's Akoko Logo" class="logo">
+            <span class="school-name">St. Paul's Akoko Secondary School</span>
+        </div>
+        <button class="menu-btn">☰</button>
+        <div class="nav-links">
+            <div class="home-link">
+                <a href="./Home.html">Home</a>
+            </div>
+            <div class="dropdown">
+                <a href="about.html">About Us</a>
+                <div class="dropdown-content">
+                    <a href="mission.html">Mission, Vision & Values</a>
+                    <a href="principals-message.html">Principal's Message</a>
+                    <a href="management.html">Management</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+              <a href="history.html">History</a>
+                <div class="dropdown-content">
+                    <a href="history.html">History</a>
+                    <a href="principals.html">Past Principals</a>
+                    <a href="performance.html">KCSE Performance</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+              <a href="programmes.html">Programmes</a>
+                <div class="dropdown-content">
+                    <div class="nested-dropdown">
+                        <a href="academics.html">Academics</a>
+                        <div class="nested-content">
+                            <a href="mathematics.html">Mathematics Department</a>
+                            <a href="science.html">Science Department</a>
+                            <a href="languages.html">Languages Department</a>
+                            <a href="humanities.html">Humanities Department</a>
+                            <a href="technical.html">Technical Department</a>
+                        </div>
+                    </div>
+                    <a href="curriculum.html">Co-curricular Activities</a>
+                </div>
+            </div>
+
+            <a href="facilities.html">Facilities</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+                menuBtn.textContent = '☰';
+            }
+        });
+    </script>
+
+    <!-- Main Content -->
+    <main>
+        <section class="department-section">
+            <div class="container">
+                <div class="department-header">
+                    <h1>Science Department</h1>
+                    <div class="hod-profile">
+                        <img src="images/science-hod.jpg" alt="Head of Science Department">
+                        <div class="hod-info">
+                            <h2>Dr. Mary Atieno</h2>
+                            <p class="title">Head of Department</p>
+                            <p class="qualification">Ph.D. Chemistry, B.Ed Science</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="department-description">
+                    <h2>About the Department</h2>
+                    <p>The Science Department at St. Paul's Akoko Secondary School is dedicated to fostering scientific inquiry and practical skills through hands-on experimentation and research. Our well-equipped laboratories provide students with the perfect environment for learning Biology, Chemistry, and Physics.</p>
+                    
+                    <p>Our department has consistently produced outstanding results in KCSE examinations, with many of our students pursuing careers in medicine, engineering, and other science-related fields. In 2023, we achieved remarkable success across all science subjects.</p>
+                </div>
+
+                <div class="department-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">8.3</span>
+                        <p>Biology Mean Grade</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">8.1</span>
+                        <p>Chemistry Mean Grade</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">7.9</span>
+                        <p>Physics Mean Grade</p>
+                    </div>
+                </div>
+
+                <div class="staff-section">
+                    <h2>Our Team</h2>
+                    <div class="table-container">
+                        <table class="staff-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Specialization</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dr. Mary Atieno</td>
+                                    <td>Chemistry, Biology</td>
+                                </tr>
+                                <tr>
+                                    <td>Mr. James Mwangi</td>
+                                    <td>Biology</td>
+                                </tr>
+                                <tr>
+                                    <td>Mrs. Elizabeth Njeri</td>
+                                    <td>Physics</td>
+                                </tr>
+                                <tr>
+                                    <td>Mr. Samuel Omondi</td>
+                                    <td>Biology</td>
+                                </tr>
+                                <tr>
+                                    <td>Ms. Grace Wangari</td>
+                                    <td>Chemistry</td>
+                                </tr>
+                                <tr>
+                                    <td>Mr. Daniel Kiprop</td>
+                                    <td>Physics, Chemistry</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Address: West Migwena, Bondo</p>
+                <p>Phone: +254714747213</p>
+                <p>Email: Akokosecondary@yahoo.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="mission.html">Mission & Vision</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

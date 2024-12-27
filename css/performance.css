@@ -1,0 +1,204 @@
+/* Hero Banner Styles */
+.hero-banner {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.hero-image {
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/school.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    width: 80%;
+    max-width: 800px;
+}
+
+.overlay-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.overlay-text p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Performance Section Styles */
+.performance-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.intro-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Stats Cards Styles */
+.performance-stats {
+    margin-bottom: 4rem;
+}
+
+.stats-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.stats-card h3 {
+    width: 100%;
+    color: #003366;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 200px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #003366;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+    color: #666;
+}
+
+/* Charts Section Styles */
+.charts-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.chart-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.chart-container h3 {
+    color: #003366;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Table Styles */
+.subject-performance h3 {
+    color: #003366;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.table-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.performance-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.performance-table th,
+.performance-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.performance-table th {
+    background-color: #003366;
+    color: white;
+    font-weight: 600;
+}
+
+.performance-table tr:last-child td {
+    border-bottom: none;
+}
+
+.performance-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-banner {
+        height: 300px;
+        margin-top: 120px;
+    }
+
+    .overlay-text h1 {
+        font-size: 2rem;
+    }
+
+    .overlay-text p {
+        font-size: 1.2rem;
+    }
+
+    .charts-section {
+        grid-template-columns: 1fr;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .performance-table {
+        min-width: 600px;
+    }
+
+    .stat-item {
+        min-width: 150px;
+    }
+} 

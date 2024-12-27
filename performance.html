@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCSE Performance - St. Paul's Akoko Secondary School</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/performance.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <button class="menu-btn">☰</button>
+            <img src="images/logo.png" alt="St. Paul's Akoko Logo" class="logo">
+            <span class="school-name">St. Paul's Akoko Secondary School</span>
+        </div>
+        
+        <div class="nav-links">
+            <div class="home-link">
+                <a href="./Home.html">Home</a>
+            </div>
+            <div class="dropdown">
+                <a href="about.html">About Us</a>
+                <div class="dropdown-content">
+                    <a href="mission.html">Mission, Vision & Values</a>
+                    <a href="principals-message.html">Principal's Message</a>
+                    <a href="management.html">Management</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+              <a href="history.html">History</a>
+                <div class="dropdown-content">
+                    <a href="history.html">History</a>
+                    <a href="principals.html">Past Principals</a>
+                    <a href="performance.html">KCSE Performance</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+              <a href="programmes.html">Programmes</a>
+                <div class="dropdown-content">
+                    <div class="nested-dropdown">
+                        <a href="academics.html">Academics</a>
+                        <div class="nested-content">
+                            <a href="mathematics.html">Mathematics Department</a>
+                            <a href="science.html">Science Department</a>
+                            <a href="languages.html">Languages Department</a>
+                            <a href="humanities.html">Humanities Department</a>
+                            <a href="technical.html">Technical Department</a>
+                        </div>
+                    </div>
+                    <a href="curriculum.html">Co-curricular Activities</a>
+                </div>
+            </div>
+
+            <a href="facilities.html">Facilities</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-banner">
+        <div class="hero-image">
+            <div class="overlay-text">
+                <h1>KCSE Performance</h1>
+                <p>A Track Record of Academic Excellence</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <section class="performance-section">
+            <div class="container">
+                <div class="intro-text">
+                    <p>St. Paul's Akoko Secondary School has consistently maintained high academic standards, as evidenced by our KCSE results over the years. Since 2017, we have seen a steady improvement in our mean grade from 6.8 to our current 7.8, demonstrating our commitment to academic excellence. This progress is reflected in the growing number of students achieving top grades and qualifying for university admission, with our university qualification rate rising from 65% in 2017 to 85% in 2023.</p>
+                </div>
+
+                <div class="performance-stats">
+                    <div class="stats-card">
+                        <h3>2023 Highlights</h3>
+                        <div class="stat-item">
+                            <span class="stat-number">85%</span>
+                            <p>University Qualification Rate</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15</span>
+                            <p>Students with A Grade</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">7.8</span>
+                            <p>Mean Grade</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-section">
+                    <div class="chart-container">
+                        <h3>Mean Grade Trend (2017-2023)</h3>
+                        <canvas id="meanGradeChart"></canvas>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3>Grade Distribution 2023</h3>
+                        <canvas id="gradeDistributionChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="subject-performance">
+                    <h3>Subject Performance 2023</h3>
+                    <div class="table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Mean Grade</th>
+                                    <th>A Grades</th>
+                                    <th>From 2022</th>
+                                    <th>From 2021</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Biology</td>
+                                    <td>8.3</td>
+                                    <td>20</td>
+                                    <td>+0.7</td>
+                                    <td>+1.2</td>
+                                </tr>
+                                <tr>
+                                    <td>Chemistry</td>
+                                    <td>8.1</td>
+                                    <td>16</td>
+                                    <td>+0.4</td>
+                                    <td>+0.9</td>
+                                </tr>
+                                <tr>
+                                    <td>Physics</td>
+                                    <td>7.9</td>
+                                    <td>14</td>
+                                    <td>+0.5</td>
+                                    <td>+1.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Mathematics</td>
+                                    <td>8.2</td>
+                                    <td>18</td>
+                                    <td>+0.5</td>
+                                    <td>+1.1</td>
+                                </tr>
+                                <tr>
+                                    <td>English</td>
+                                    <td>7.9</td>
+                                    <td>12</td>
+                                    <td>+0.3</td>
+                                    <td>+0.8</td>
+                                </tr>
+                                <tr>
+                                    <td>Kiswahili</td>
+                                    <td>7.5</td>
+                                    <td>10</td>
+                                    <td>+0.4</td>
+                                    <td>+0.7</td>
+                                </tr>
+                                <tr>
+                                    <td>History</td>
+                                    <td>7.7</td>
+                                    <td>13</td>
+                                    <td>+0.3</td>
+                                    <td>+0.6</td>
+                                </tr>
+                                <tr>
+                                    <td>Geography</td>
+                                    <td>7.6</td>
+                                    <td>11</td>
+                                    <td>+0.4</td>
+                                    <td>+0.8</td>
+                                </tr>
+                                <tr>
+                                    <td>Business Studies</td>
+                                    <td>7.8</td>
+                                    <td>12</td>
+                                    <td>+0.5</td>
+                                    <td>+0.9</td>
+                                </tr>
+                                <tr>
+                                    <td>Agriculture</td>
+                                    <td>8.0</td>
+                                    <td>15</td>
+                                    <td>+0.6</td>
+                                    <td>+1.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Address: West Migwena, Bondo</p>
+                <p>Phone: +254714747213</p>
+                <p>Email: Akokosecondary@yahoo.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="mission.html">Mission & Vision</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mean Grade Trend Chart
+        const meanGradeCtx = document.getElementById('meanGradeChart').getContext('2d');
+        new Chart(meanGradeCtx, {
+            type: 'line',
+            data: {
+                labels: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                datasets: [{
+                    label: 'Mean Grade',
+                    data: [6.8, 7.0, 7.2, 7.4, 7.6, 7.5, 7.8],
+                    borderColor: '#003366',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 6,
+                        max: 9
+                    }
+                }
+            }
+        });
+
+        // Grade Distribution Chart
+        const gradeDistCtx = document.getElementById('gradeDistributionChart').getContext('2d');
+        new Chart(gradeDistCtx, {
+            type: 'bar',
+            data: {
+                labels: ['A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D'],
+                datasets: [{
+                    label: 'Number of Students',
+                    data: [15, 25, 35, 45, 40, 35, 30, 25, 20, 10],
+                    backgroundColor: '#003366'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+                menuBtn.textContent = '☰';
+            }
+        });
+    </script>
+</body>
+</html> 

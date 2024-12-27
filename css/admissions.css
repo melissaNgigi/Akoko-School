@@ -1,0 +1,203 @@
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    height: 400px;
+    margin-top: 80px;
+}
+
+.hero-image {
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/school.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Admissions Content Styles */
+.admissions-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.admissions-content h2 {
+    color: #003366;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Requirements Section */
+.requirements-section {
+    margin-bottom: 4rem;
+}
+
+.requirements-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.requirement-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.requirement-item h3 {
+    color: #003366;
+    margin-bottom: 1rem;
+}
+
+.requirement-item ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.requirement-item ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.requirement-item ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #003366;
+}
+
+/* Fees Section */
+.fees-section {
+    margin-bottom: 4rem;
+}
+
+.fees-table {
+    overflow-x: auto;
+}
+
+.fees-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fees-table th,
+.fees-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.fees-table th {
+    background-color: #003366;
+    color: white;
+}
+
+/* Admission Process */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.step {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: #003366;
+    color: white;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.step h3 {
+    color: #003366;
+    margin-bottom: 1rem;
+}
+
+/* Contact Info */
+.contact-info {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 300px;
+        margin-top: 120px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .admissions-content {
+        padding: 2rem 1rem;
+    }
+
+    .fees-table {
+        margin: 0 -1rem;
+    }
+} 

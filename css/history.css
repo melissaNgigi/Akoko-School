@@ -1,0 +1,147 @@
+/* Hero Banner Styles */
+.hero-banner {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.hero-image {
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/school.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    width: 80%;
+    max-width: 800px;
+}
+
+.overlay-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.overlay-text p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* History Section Styles */
+.history-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.history-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.history-content h2 {
+    color: #003366;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+.history-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* History Buttons Styles */
+.history-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.history-button {
+    flex: 1;
+    max-width: 400px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s;
+}
+
+.button-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.history-button:hover .button-content {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button-content h3 {
+    color: #003366;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.button-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-banner {
+        height: 300px;
+        margin-top: 120px;
+    }
+
+    .overlay-text h1 {
+        font-size: 2rem;
+    }
+
+    .overlay-text p {
+        font-size: 1.2rem;
+    }
+
+    .history-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .history-button {
+        width: 100%;
+    }
+} 
