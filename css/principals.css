@@ -10,7 +10,7 @@
 .hero-image {
     height: 100%;
     width: 100%;
-    background-image: url('../images/school.jpg');
+    background-image: url('../images/principals.JPG');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -51,7 +51,7 @@
 
 /* Principals Section Styles */
 .principals-section {
-    padding: 4rem 0;
+    padding: 2rem 0;
     background-color: #f8f9fa;
 }
 
@@ -64,7 +64,7 @@
 .intro-text {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 4rem;
+    margin: 0 auto 2rem;
     line-height: 1.8;
     color: #333;
 }
@@ -74,14 +74,14 @@
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
     width: 4px;
-    background-color: #003366;
+    background-color: #898989;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -89,7 +89,7 @@
 }
 
 .timeline-item {
-    padding: 2rem 0;
+    padding: 1rem 0;
     position: relative;
     width: 100%;
     display: flex;
@@ -110,7 +110,7 @@
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
     transition: transform 0.3s;
 }
@@ -120,25 +120,16 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.principal-card img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1.5rem;
-    border: 3px solid #003366;
-}
-
 .principal-card h3 {
-    color: #003366;
+    color: #333333;
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .principal-card .tenure {
     color: #666;
     font-style: italic;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .principal-card .achievement {
@@ -175,10 +166,5 @@
     .timeline-content {
         width: calc(100% - 80px);
         margin-left: 60px !important;
-    }
-
-    .principal-card img {
-        width: 150px;
-        height: 150px;
     }
 } 

@@ -10,7 +10,7 @@
 .hero-image {
     height: 100%;
     width: 100%;
-    background-image: url('../images/school.jpg');
+    background-image: url('../images/management.JPG');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -52,13 +52,13 @@
 /* Principal Section Styles */
 .principal-section {
     padding: 4rem 0;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 2rem;
     display: flex;
     gap: 4rem;
 }
@@ -66,46 +66,54 @@
 .principal-image {
     flex: 0 0 300px;
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .principal-image img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #666666;
     margin-bottom: 1.5rem;
 }
 
 .principal-image h2 {
-    color: #003366;
-    margin-bottom: 0.5rem;
+    color: #666666;
+    margin: 1rem 0;
 }
 
 .principal-image .title {
-    color: #666;
+    color: #666666;
     font-style: italic;
 }
 
 .principal-message {
     flex: 1;
+    background: #666666;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
 }
 
 .principal-message h2 {
-    color: #003366;
-    font-size: 2rem;
+    color: #ffffff;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
 }
 
 .principal-message p {
-    margin-bottom: 1.5rem;
+    color: #ffffff;
     line-height: 1.8;
-    color: #333;
+    margin-bottom: 1rem;
 }
 
 .signature {
-    margin-top: 2rem;
+    text-align: right;
     font-style: italic;
-    color: #003366;
+    color: #ffffff;
+    margin-top: 2rem;
 }
 
 /* Responsive Design */

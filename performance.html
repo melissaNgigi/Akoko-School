@@ -50,6 +50,9 @@
                             <a href="languages.html">Languages Department</a>
                             <a href="humanities.html">Humanities Department</a>
                             <a href="technical.html">Technical Department</a>
+                +           <a href="academics.html">Academics Department</a>
+                +           <a href="boarding.html">Boarding Department</a>
+                +           <a href="games.html">Games Department</a>
                         </div>
                     </div>
                     <a href="curriculum.html">Co-curricular Activities</a>
@@ -62,145 +65,46 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-banner">
+    <!-- Hero Banner -->
+    <div class="hero-banner">
         <div class="hero-image">
             <div class="overlay-text">
-                <h1>KCSE Performance</h1>
-                <p>A Track Record of Academic Excellence</p>
+                <h1>Academic Performance</h1>
+                <p>Track our academic excellence over the years</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Performance Section -->
+    <section class="performance-section">
+        <div class="container">
+            <!-- Line Graph -->
+            <div class="charts-section">
+                <div class="chart-container">
+                    <h3>Performance Trend</h3>
+                    <canvas id="performanceGraph" class="line-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Performance Table -->
+            <div class="table-container">
+                <table class="performance-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Mean Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="performanceTableBody">
+                        <!-- Data will be loaded from CMS -->
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main>
-        <section class="performance-section">
-            <div class="container">
-                <div class="intro-text">
-                    <p>St. Paul's Akoko Secondary School has consistently maintained high academic standards, as evidenced by our KCSE results over the years. Since 2017, we have seen a steady improvement in our mean grade from 6.8 to our current 7.8, demonstrating our commitment to academic excellence. This progress is reflected in the growing number of students achieving top grades and qualifying for university admission, with our university qualification rate rising from 65% in 2017 to 85% in 2023.</p>
-                </div>
-
-                <div class="performance-stats">
-                    <div class="stats-card">
-                        <h3>2023 Highlights</h3>
-                        <div class="stat-item">
-                            <span class="stat-number">85%</span>
-                            <p>University Qualification Rate</p>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">15</span>
-                            <p>Students with A Grade</p>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">7.8</span>
-                            <p>Mean Grade</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="charts-section">
-                    <div class="chart-container">
-                        <h3>Mean Grade Trend (2017-2023)</h3>
-                        <canvas id="meanGradeChart"></canvas>
-                    </div>
-
-                    <div class="chart-container">
-                        <h3>Grade Distribution 2023</h3>
-                        <canvas id="gradeDistributionChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="subject-performance">
-                    <h3>Subject Performance 2023</h3>
-                    <div class="table-container">
-                        <table class="performance-table">
-                            <thead>
-                                <tr>
-                                    <th>Subject</th>
-                                    <th>Mean Grade</th>
-                                    <th>A Grades</th>
-                                    <th>From 2022</th>
-                                    <th>From 2021</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Biology</td>
-                                    <td>8.3</td>
-                                    <td>20</td>
-                                    <td>+0.7</td>
-                                    <td>+1.2</td>
-                                </tr>
-                                <tr>
-                                    <td>Chemistry</td>
-                                    <td>8.1</td>
-                                    <td>16</td>
-                                    <td>+0.4</td>
-                                    <td>+0.9</td>
-                                </tr>
-                                <tr>
-                                    <td>Physics</td>
-                                    <td>7.9</td>
-                                    <td>14</td>
-                                    <td>+0.5</td>
-                                    <td>+1.0</td>
-                                </tr>
-                                <tr>
-                                    <td>Mathematics</td>
-                                    <td>8.2</td>
-                                    <td>18</td>
-                                    <td>+0.5</td>
-                                    <td>+1.1</td>
-                                </tr>
-                                <tr>
-                                    <td>English</td>
-                                    <td>7.9</td>
-                                    <td>12</td>
-                                    <td>+0.3</td>
-                                    <td>+0.8</td>
-                                </tr>
-                                <tr>
-                                    <td>Kiswahili</td>
-                                    <td>7.5</td>
-                                    <td>10</td>
-                                    <td>+0.4</td>
-                                    <td>+0.7</td>
-                                </tr>
-                                <tr>
-                                    <td>History</td>
-                                    <td>7.7</td>
-                                    <td>13</td>
-                                    <td>+0.3</td>
-                                    <td>+0.6</td>
-                                </tr>
-                                <tr>
-                                    <td>Geography</td>
-                                    <td>7.6</td>
-                                    <td>11</td>
-                                    <td>+0.4</td>
-                                    <td>+0.8</td>
-                                </tr>
-                                <tr>
-                                    <td>Business Studies</td>
-                                    <td>7.8</td>
-                                    <td>12</td>
-                                    <td>+0.5</td>
-                                    <td>+0.9</td>
-                                </tr>
-                                <tr>
-                                    <td>Agriculture</td>
-                                    <td>8.0</td>
-                                    <td>15</td>
-                                    <td>+0.6</td>
-                                    <td>+1.0</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/performance.js"></script>
 
     <!-- Footer -->
     <footer>
@@ -223,10 +127,11 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
+            <p id="copyrightText" style="cursor: pointer;">&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Use</a>
+                <span id="adminTrigger" style="display: none; color: #000000; cursor: pointer; font-size: 20px; margin-left: 8px;">·</span>
             </div>
         </div>
     </footer>
@@ -301,6 +206,25 @@
                 navLinks.classList.remove('active');
                 menuBtn.textContent = '☰';
             }
+        });
+
+        const copyrightText = document.getElementById('copyrightText');
+        const adminTrigger = document.getElementById('adminTrigger');
+        let clickCount = 0;
+
+        copyrightText.addEventListener('click', function() {
+            clickCount++;
+            if (clickCount === 5) {
+                adminTrigger.style.display = 'inline';
+                setTimeout(function() {
+                    adminTrigger.style.display = 'none';
+                    clickCount = 0;
+                }, 5000);
+            }
+        });
+
+        adminTrigger.addEventListener('click', function() {
+            window.location.href = '/admin/login.html';
         });
     </script>
 </body>

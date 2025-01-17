@@ -1,184 +1,186 @@
-/* Department Section Styles */
-.department-section {
-    padding: 6rem 0 4rem;
-    background-color: #f8f9fa;
+/* Hero Banner Styles */
+.hero-banner {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 80px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+.hero-image {
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/school.JPG');
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-/* Department Header Styles */
-.department-header {
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+    color: white;
+    z-index: 2;
+    width: 80%;
+    max-width: 800px;
+}
+
+.overlay-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.overlay-text p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Department Content */
+.department-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.department-intro {
     margin-bottom: 3rem;
 }
 
-.department-header h1 {
-    color: #003366;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+.subjects {
+    margin: 2rem 0;
 }
 
-.hod-profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
+.subjects h3 {
+    color: #4a4a4a;
+    margin-bottom: 1rem;
 }
 
-.hod-profile img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #003366;
+.subjects ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.hod-info {
-    text-align: left;
+.subjects li {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.hod-info h2 {
-    color: #003366;
-    margin-bottom: 0.5rem;
-}
-
-.hod-info .title {
-    color: #666;
-    font-style: italic;
-    margin-bottom: 0.5rem;
-}
-
-.hod-info .qualification {
-    color: #333;
-}
-
-/* Department Description Styles */
-.department-description {
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    text-align: center;
-}
-
-.department-description h2 {
-    color: #003366;
-    margin-bottom: 1.5rem;
-}
-
-.department-description p {
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-    color: #333;
-}
-
-/* Department Stats Styles */
-.department-stats {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 4rem;
-}
-
-.stat-card {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    flex: 1;
-    max-width: 200px;
-}
-
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #003366;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.stat-card p {
-    color: #666;
-}
-
-/* Staff Section Styles */
+/* Staff Section */
 .staff-section {
-    margin-top: 4rem;
+    margin: 3rem 0;
 }
 
 .staff-section h2 {
-    color: #003366;
-    text-align: center;
+    color: #4a4a4a;
     margin-bottom: 2rem;
 }
 
-.table-container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.staff-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     overflow: hidden;
+    text-align: center;
 }
 
-.staff-table {
-    width: 100%;
-    border-collapse: collapse;
+.staff-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px auto;
+    object-fit: cover;
 }
 
-.staff-table th,
-.staff-table td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #dee2e6;
+.staff-info {
+    padding: 20px;
 }
 
-.staff-table th {
-    background-color: #003366;
-    color: white;
-    font-weight: 600;
+.staff-info h3 {
+    margin: 0;
+    color: #4a4a4a;
 }
 
-.staff-table tr:last-child td {
-    border-bottom: none;
-}
-
-.staff-table tr:hover {
-    background-color: #f8f9fa;
+.staff-info p {
+    margin: 5px 0;
+    color: #666;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .department-section {
-        padding-top: 8rem;
+    .hero-banner {
+        height: 300px;
+        margin-top: 120px;
     }
 
-    .hod-profile {
-        flex-direction: column;
-        text-align: center;
+    .overlay-text h1 {
+        font-size: 2rem;
     }
 
-    .hod-info {
-        text-align: center;
+    .overlay-text p {
+        font-size: 1.2rem;
     }
 
-    .department-stats {
-        flex-direction: column;
-        align-items: center;
+    .department-content {
+        padding: 1rem;
     }
 
-    .stat-card {
-        width: 100%;
-        max-width: 300px;
+    .staff-grid {
+        grid-template-columns: 1fr;
     }
+} 
 
-    .table-container {
-        overflow-x: auto;
-    }
+.hod-info {
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-    .staff-table {
-        min-width: 600px;
-    }
+.hod-info h3 {
+    color: #4a4a4a;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hod-info p {
+    color: #666;
+    font-size: 1.1rem;
+} 
+
+.department-content h1, 
+.department-content h2,
+.hod-info h3,
+.subjects h3 {
+    color: #4a4a4a;
+}
+
+.hod-info h3 {
+    color: #4a4a4a;
 } 

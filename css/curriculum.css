@@ -21,11 +21,13 @@ main h1 {
 }
 
 .activity-section img {
-    width: 80%;
-    height: 400px;
+    width: 40%;
+    max-width: 400px;
+    height: auto;
     object-fit: cover;
-    display: block;
-    margin: 0 auto;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .left-image, .right-image {
@@ -36,6 +38,16 @@ main h1 {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-image {
+    float: left;
+    margin-right: 25px;
+}
+
+.right-image {
+    float: right;
+    margin-left: 25px;
 }
 
 .content {
@@ -73,7 +85,10 @@ main h1 {
 
     .activity-section img {
         width: 90%;
-        height: 300px;
+        max-width: 300px;
+        float: none;
+        margin: 20px auto;
+        display: block;
     }
 
     .content {
@@ -90,4 +105,12 @@ main h1 {
     .content h2 {
         font-size: 1.8rem;
     }
+} 
+
+.activity-section h2 {
+    color: #333333;
+}
+
+.content-box {
+    border-color: #333333;
 } 

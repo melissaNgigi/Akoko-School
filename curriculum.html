@@ -49,6 +49,9 @@
                             <a href="languages.html">Languages Department</a>
                             <a href="humanities.html">Humanities Department</a>
                             <a href="technical.html">Technical Department</a>
+                +           <a href="academics.html">Academics Department</a>
+                +           <a href="boarding.html">Boarding Department</a>
+                +           <a href="games.html">Games Department</a>
                         </div>
                     </div>
                     <a href="curriculum.html">Co-curricular Activities</a>
@@ -69,7 +72,7 @@
             <img src="images/sports.jpg" alt="Sports Activities" class="left-image">
             <div class="content">
                 <h2>Sports</h2>
-                <p>At St. Paul's Akoko Secondary School, we believe in nurturing both mind and body. Our sports program includes football, volleyball, basketball, athletics, and rugby. Our teams have consistently performed well in county and regional competitions.</p>
+                <p>At St. Paul's Akoko Secondary School, we believe in nurturing both mind and body. Our sports program includes football, volleyball, table tennis, handball, and athletics. Our teams have consistently performed well in county and regional competitions.</p>
                 <p>Our dedicated coaches and modern sports facilities enable students to develop their athletic abilities while learning valuable lessons in teamwork, discipline, and leadership. We've produced several national-level athletes and continue to excel in various sporting events.</p>
             </div>
         </section>
@@ -78,7 +81,7 @@
         <section class="activity-section">
             <div class="content">
                 <h2>Clubs & Societies</h2>
-                <p>Our diverse range of clubs and societies caters to various student interests and talents. From Science Club to Debate Society, Environmental Club to Young Farmers Club, we offer numerous opportunities for students to explore their passions.</p>
+                <p>Our diverse range of clubs and societies caters to various student interests and talents. From Science Club to Engineering Club, we offer numerous opportunities for students to explore their passions.</p>
                 <p>These clubs organize regular activities, competitions, and field trips, helping students develop leadership skills, creativity, and practical knowledge outside the classroom. Many of our clubs have won recognition in national competitions.</p>
             </div>
             <img src="images/clubs.jpg" alt="Clubs and Societies" class="right-image">
@@ -86,10 +89,10 @@
 
         <!-- Performing Arts Section -->
         <section class="activity-section">
-            <img src="images/performing-arts.jpg" alt="Performing Arts" class="left-image">
+            <img src="images/arts.jpg" alt="Performing Arts" class="left-image">
             <div class="content">
                 <h2>Performing Arts & Music</h2>
-                <p>Our performing arts and music program is a vibrant part of school life. Students participate in drama, music festivals, choir, and traditional dance performances. The school has a well-equipped music room and dedicated performance spaces.</p>
+                <p>Our performing arts and music program is a vibrant part of school life. Students participate in drama and music festivals. The school has a well-equipped music room and dedicated performance spaces.</p>
                 <p>Our students regularly participate in county and national music and drama festivals, often bringing home top honors. These activities help develop confidence, creativity, and appreciation for cultural arts.</p>
             </div>
         </section>
@@ -116,10 +119,11 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
+            <p id="copyrightText" style="cursor: pointer;">&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Use</a>
+                <span id="adminTrigger" style="display: none; color: #000000; cursor: pointer; font-size: 20px; margin-left: 8px;">·</span>
             </div>
         </div>
     </footer>
@@ -147,6 +151,25 @@
                 navLinks.classList.remove('active');
                 menuBtn.textContent = '☰';
             }
+        });
+
+        const copyrightText = document.getElementById('copyrightText');
+        const adminTrigger = document.getElementById('adminTrigger');
+        let clickCount = 0;
+
+        copyrightText.addEventListener('click', function() {
+            clickCount++;
+            if (clickCount === 5) {
+                adminTrigger.style.display = 'inline';
+                setTimeout(function() {
+                    adminTrigger.style.display = 'none';
+                    clickCount = 0;
+                }, 5000);
+            }
+        });
+
+        adminTrigger.addEventListener('click', function() {
+            window.location.href = '/admin/login.html';
         });
     </script>
 </body>

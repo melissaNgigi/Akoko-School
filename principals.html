@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar"></nav>
+    <nav class="navbar">
         <div class="nav-brand">
             <img src="images/logo.png" alt="St. Paul's Akoko Logo" class="logo">
             <span class="school-name">St. Paul's Akoko Secondary School</span>
@@ -33,6 +33,7 @@
                 <a href="#">History</a>
                 <div class="dropdown-content">
                     <a href="history.html">History</a>
+                    <a href="enrollment.html">Student Enrollment</a>
                     <a href="principals.html">Past Principals</a>
                     <a href="performance.html">KCSE Performance</a>
                 </div>
@@ -49,6 +50,9 @@
                             <a href="languages.html">Languages Department</a>
                             <a href="humanities.html">Humanities Department</a>
                             <a href="technical.html">Technical Department</a>
+                +           <a href="academics.html">Academics Department</a>
+                +           <a href="boarding.html">Boarding Department</a>
+                +           <a href="games.html">Games Department</a>
                         </div>
                     </div>
                     <a href="curriculum.html">Co-curricular Activities</a>
@@ -75,17 +79,15 @@
         <section class="principals-section">
             <div class="container">
                 <div class="intro-text">
-                    <p>Since our establishment in 1965, St. Paul's Akoko Secondary School has been led by distinguished educators who have contributed significantly to our growth and development. Each principal has left an indelible mark on our institution's history.</p>
+                    <p>The list of principals who have served the school froom 2009 to date is as follows. These headteachers gave the school solid foundation upon which AMSS Stands today. The leaders were also instrumental for the development of some of the foundational structures that exist in the school till date. </p>
                 </div>
 
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <div class="principal-card">
-                                <img src="images/principal1.jpg" alt="Mr. James Okello">
-                                <h3>Mr. James Okello</h3>
-                                <p class="tenure">1965 - 1975</p>
-                                <p class="achievement">Founding Principal who established the school's core values and initial infrastructure.</p>
+                                <h3>Mr. Nestor C Ndolo</h3>
+                                <p class="tenure">1986 - 1991</p>
                             </div>
                         </div>
                     </div>
@@ -93,10 +95,10 @@
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <div class="principal-card">
-                                <img src="images/principal2.jpg" alt="Mrs. Grace Akinyi">
-                                <h3>Mrs. Grace Wambui</h3>
-                                <p class="tenure">1975 - 1985</p>
-                                <p class="achievement">Expanded academic programs and introduced new sports facilities.</p>
+                               
+                                <h3>Mr. Alfred N Lugala</h3>
+                                <p class="tenure">1991 - 1995</p>
+                            
                             </div>
                         </div>
                     </div>
@@ -104,10 +106,20 @@
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <div class="principal-card">
-                                <img src="images/principal3.jpg" alt="Dr. Peter Ouma">
-                                <h3>Dr. Peter Ouma</h3>
-                                <p class="tenure">1985 - 1995</p>
-                                <p class="achievement">Modernized teaching methods and established computer laboratories.</p>
+                               
+                                <h3>Mr. Vincent E. Opanga</h3>
+                                <p class="tenure">1996 - 2002</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                                <div class="principal-card">
+                                    
+                                <h3>Mrs. Milka A. Omollo</h3>
+                                <p class="tenure">2003 - 2003</p>
+                               
                             </div>
                         </div>
                     </div>
@@ -115,10 +127,10 @@
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <div class="principal-card">
-                                <img src="images/principal4.jpg" alt="Mrs. Elizabeth Adhiambo">
-                                <h3>Mrs. Elizabeth Maobe</h3>
-                                <p class="tenure">1995 - 2010</p>
-                                <p class="achievement">Led the school through significant academic improvements and infrastructure development.</p>
+                            
+                                <h3>Mr. Maurice Misita</h3>
+                                <p class="tenure">2003 - 2009</p>
+                               
                             </div>
                         </div>
                     </div>
@@ -126,13 +138,25 @@
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <div class="principal-card">
-                                <img src="images/principal5.jpg" alt="Mr. David Onyango">
-                                <h3>Mr. David Onyango</h3>
+                            
+                                <h3>Mr. Daniel Ng'iela</h3>
                                 <p class="tenure">2010 - 2020</p>
-                                <p class="achievement">Enhanced community engagement and established international partnerships.</p>
+                               
                             </div>
                         </div>
                     </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="principal-card">
+                            
+                                <h3>Mr. John O. Ojeya</h3>
+                                <p class="tenure">2020 - Date</p>
+                               
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -159,10 +183,11 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
+            <p id="copyrightText" style="cursor: pointer;">&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Use</a>
+                <span id="adminTrigger" style="display: none; color: #000000; cursor: pointer; font-size: 20px; margin-left: 8px;">·</span>
             </div>
         </div>
     </footer>
@@ -191,6 +216,25 @@
                 navLinks.classList.remove('active');
                 menuBtn.textContent = '☰';
             }
+        });
+
+        const copyrightText = document.getElementById('copyrightText');
+        const adminTrigger = document.getElementById('adminTrigger');
+        let clickCount = 0;
+
+        copyrightText.addEventListener('click', function() {
+            clickCount++;
+            if (clickCount === 5) {
+                adminTrigger.style.display = 'inline';
+                setTimeout(function() {
+                    adminTrigger.style.display = 'none';
+                    clickCount = 0;
+                }, 5000);
+            }
+        });
+
+        adminTrigger.addEventListener('click', function() {
+            window.location.href = '/admin/login.html';
         });
     </script>
 </body>

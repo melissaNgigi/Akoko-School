@@ -10,7 +10,7 @@
 .hero-image {
     height: 100%;
     width: 100%;
-    background-image: url('../images/school.jpg');
+    background-image: url('../images/school.JPG');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -68,7 +68,7 @@
 }
 
 .history-content h2 {
-    color: #003366;
+    color: #333333;
     font-size: 2.2rem;
     margin-bottom: 2rem;
 }
@@ -110,7 +110,7 @@
 }
 
 .button-content h3 {
-    color: #003366;
+    color: #4c4c4c;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -143,5 +143,45 @@
 
     .history-button {
         width: 100%;
+    }
+}
+
+/* Enrollment Table Styles */
+.enrollment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.enrollment-table th,
+.enrollment-table td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+
+.enrollment-table th {
+    background-color: #666;
+    color: white;
+    font-weight: 600;
+}
+
+.enrollment-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.enrollment-table tr:hover {
+    background-color: #f1f3f5;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+    .enrollment-table {
+        display: block;
+        overflow-x: auto;
     }
 } 

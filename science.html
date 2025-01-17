@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Science Department - St. Paul's Akoko Secondary School</title>
+    <title>[Department Name] - St. Paul's Akoko</title>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/departments.css">
 </head>
 <body>
-    
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-brand">
             <img src="images/logo.png" alt="St. Paul's Akoko Logo" class="logo">
@@ -33,6 +33,7 @@
                 <a href="#">History</a>
                 <div class="dropdown-content">
                     <a href="history.html">History</a>
+                    <a href="enrollment.html">Student Enrollment</a>
                     <a href="principals.html">Past Principals</a>
                     <a href="performance.html">KCSE Performance</a>
                 </div>
@@ -49,6 +50,9 @@
                             <a href="languages.html">Languages Department</a>
                             <a href="humanities.html">Humanities Department</a>
                             <a href="technical.html">Technical Department</a>
+                +           <a href="academics.html">Academics Department</a>
+                +           <a href="boarding.html">Boarding Department</a>
+                +           <a href="games.html">Games Department</a>
                         </div>
                     </div>
                     <a href="curriculum.html">Co-curricular Activities</a>
@@ -61,111 +65,44 @@
         </div>
     </nav>
 
-    <script>
-        const menuBtn = document.querySelector('.menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        const dropdowns = document.querySelectorAll('.dropdown');
-
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
-        });
-
-        dropdowns.forEach(dropdown => {
-            dropdown.addEventListener('click', (e) => {
-                e.stopPropagation();
-                dropdown.classList.toggle('active');
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
-                navLinks.classList.remove('active');
-                menuBtn.textContent = '☰';
-            }
-        });
-    </script>
-
-    <!-- Main Content -->
-    <main>
-        <section class="department-section">
-            <div class="container">
-                <div class="department-header">
-                    <h1>Science Department</h1>
-                    <div class="hod-profile">
-                        <img src="images/science-hod.jpg" alt="Head of Science Department">
-                        <div class="hod-info">
-                            <h2>Dr. Mary Atieno</h2>
-                            <p class="title">Head of Department</p>
-                            <p class="qualification">Ph.D. Chemistry, B.Ed Science</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="department-description">
-                    <h2>About the Department</h2>
-                    <p>The Science Department at St. Paul's Akoko Secondary School is dedicated to fostering scientific inquiry and practical skills through hands-on experimentation and research. Our well-equipped laboratories provide students with the perfect environment for learning Biology, Chemistry, and Physics.</p>
-                    
-                    <p>Our department has consistently produced outstanding results in KCSE examinations, with many of our students pursuing careers in medicine, engineering, and other science-related fields. In 2023, we achieved remarkable success across all science subjects.</p>
-                </div>
-
-                <div class="department-stats">
-                    <div class="stat-card">
-                        <span class="stat-number">8.3</span>
-                        <p>Biology Mean Grade</p>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">8.1</span>
-                        <p>Chemistry Mean Grade</p>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">7.9</span>
-                        <p>Physics Mean Grade</p>
-                    </div>
-                </div>
-
-                <div class="staff-section">
-                    <h2>Our Team</h2>
-                    <div class="table-container">
-                        <table class="staff-table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Specialization</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Dr. Mary Atieno</td>
-                                    <td>Chemistry, Biology</td>
-                                </tr>
-                                <tr>
-                                    <td>Mr. James Mwangi</td>
-                                    <td>Biology</td>
-                                </tr>
-                                <tr>
-                                    <td>Mrs. Elizabeth Njeri</td>
-                                    <td>Physics</td>
-                                </tr>
-                                <tr>
-                                    <td>Mr. Samuel Omondi</td>
-                                    <td>Biology</td>
-                                </tr>
-                                <tr>
-                                    <td>Ms. Grace Wangari</td>
-                                    <td>Chemistry</td>
-                                </tr>
-                                <tr>
-                                    <td>Mr. Daniel Kiprop</td>
-                                    <td>Physics, Chemistry</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero-banner">
+        <div class="hero-image">
+            <div class="overlay-text">
+                <h1>Science Department</h1>
+                <p>Aspire for Excellence</p>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <main>
+        <div class="department-content">
+            <h1>Science Department</h1>
+            
+            <section class="department-intro">
+                <h2>About Our Department</h2>
+                <p>Welcome to the Science Department at St. Paul's Akoko Secondary School. Our department focuses on practical and theoretical aspects of scientific knowledge.</p>
+                
+                <div class="subjects">
+                    <h3>Subjects Offered:</h3>
+                    <ul>
+                        <li><strong>Biology:</strong> Study of living organisms and life processes</li>
+                        <li><strong>Chemistry:</strong> Study of matter, its properties, and reactions</li>
+                        <li><strong>Physics:</strong> Study of matter, energy, and their interactions</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="staff-section">
+                <h2>Head of Department</h2>
+                <div class="hod-info">
+                    <h3>Head of Department</h3>
+                    <div id="scienceHodInfo">
+                        <!-- HOD data will be loaded from CMS -->
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -196,5 +133,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>

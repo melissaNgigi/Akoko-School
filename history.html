@@ -33,6 +33,7 @@
                 <a href="#">History</a>
                 <div class="dropdown-content">
                     <a href="history.html">History</a>
+                    <a href="enrollment.html">Student Enrollment</a>
                     <a href="principals.html">Past Principals</a>
                     <a href="performance.html">KCSE Performance</a>
                 </div>
@@ -49,6 +50,9 @@
                             <a href="languages.html">Languages Department</a>
                             <a href="humanities.html">Humanities Department</a>
                             <a href="technical.html">Technical Department</a>
+                +           <a href="academics.html">Academics Department</a>
+                +           <a href="boarding.html">Boarding Department</a>
+                +           <a href="games.html">Games Department</a>
                         </div>
                     </div>
                     <a href="curriculum.html">Co-curricular Activities</a>
@@ -77,9 +81,9 @@
             <div class="container">
                 <div class="history-content">
                     <h2>Our Journey Through Time</h2>
-                    <p>St. Paul's Akoko Secondary School was established in 1965 with a vision to provide quality education to the community. From humble beginnings with just a few classrooms and dedicated teachers, we have grown into a prestigious institution that has shaped the lives of thousands of students.</p>
-                    <p>Over the decades, our school has maintained its commitment to academic excellence while adapting to changing times. We have continuously expanded our facilities, enhanced our curriculum, and embraced modern teaching methods to prepare our students for the challenges of the contemporary world.</p>
-                    <p>Throughout our journey, we have been blessed with visionary leaders, committed staff, and supportive community members who have contributed to making our school what it is today.</p>
+                    <p>St. Paul's Akoko Mixed Secondary School is a seven streamed county public institution located in Akoko village, Central Sakwa location Bondo Sub-county in Siaya County. The school was established in the year 1986 with the first Principal of the school being Mr. Nestor C Ndolo </p>
+                    <p>Since then, the school has grown in terms of the quality and quantity of the infrastructure. The main financial contributors to the growth of the facilities are CDF, parents and MOE. The school has also grown in terms of student enrolment. There were 25 students in 1986 when the school was founded. The current student population stands at 1294. </p>
+                    <p>On religious affiliation, the School is sponsored by Anglican Church of Kenya</p>
                 </div>
 
                 <div class="history-buttons">
@@ -121,10 +125,11 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
+            <p id="copyrightText" style="cursor: pointer;">&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Use</a>
+                <span id="adminTrigger" style="display: none; color: #000000; cursor: pointer; font-size: 20px; margin-left: 8px;">·</span>
             </div>
         </div>
     </footer>
@@ -153,6 +158,25 @@
                 navLinks.classList.remove('active');
                 menuBtn.textContent = '☰';
             }
+        });
+
+        const copyrightText = document.getElementById('copyrightText');
+        const adminTrigger = document.getElementById('adminTrigger');
+        let clickCount = 0;
+
+        copyrightText.addEventListener('click', function() {
+            clickCount++;
+            if (clickCount === 5) {
+                adminTrigger.style.display = 'inline';
+                setTimeout(function() {
+                    adminTrigger.style.display = 'none';
+                    clickCount = 0;
+                }, 5000);
+            }
+        });
+
+        adminTrigger.addEventListener('click', function() {
+            window.location.href = '/admin/login.html';
         });
     </script>
 </body>

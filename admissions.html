@@ -33,6 +33,7 @@
                 <a href="#">History</a>
                 <div class="dropdown-content">
                     <a href="history.html">History</a>
+                    <a href="enrollment.html">Student Enrollment</a>
                     <a href="principals.html">Past Principals</a>
                     <a href="performance.html">KCSE Performance</a>
                 </div>
@@ -49,6 +50,9 @@
                             <a href="languages.html">Languages Department</a>
                             <a href="humanities.html">Humanities Department</a>
                             <a href="technical.html">Technical Department</a>
+                +           <a href="academics.html">Academics Department</a>
+                +           <a href="boarding.html">Boarding Department</a>
+                +           <a href="games.html">Games Department</a>
                         </div>
                     </div>
                     <a href="curriculum.html">Co-curricular Activities</a>
@@ -97,43 +101,48 @@
 
             <div class="fees-section">
                 <h2>School Fees Structure</h2>
-                <div class="fees-table">
-                    <table>
+                <div class="fees-tables">
+                    <h3>Boarding Students</h3>
+                    <table class="fees-table">
                         <thead>
                             <tr>
-                                <th>Item</th>
-                                <th>Amount (KSH)</th>
                                 <th>Term</th>
+                                <th>Amount (KSH)</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Tuition Fee</td>
-                                <td>15,000</td>
-                                <td>Per Term</td>
-                            </tr>
-                            <tr>
-                                <td>Boarding Fee</td>
-                                <td>18,000</td>
-                                <td>Per Term</td>
-                            </tr>
-                            <tr>
-                                <td>Development Fee</td>
-                                <td>5,000</td>
-                                <td>Annual</td>
-                            </tr>
-                            <tr>
-                                <td>Activity Fee</td>
-                                <td>2,000</td>
-                                <td>Per Term</td>
-                            </tr>
-                            <tr>
-                                <td>Caution Money</td>
-                                <td>2,000</td>
-                                <td>One-time</td>
-                            </tr>
+                        <tbody id="boardingFeesTableBody">
+                            <!-- Fees will be populated by JavaScript -->
                         </tbody>
+                        <tfoot>
+                            <tr class="total-row">
+                                <td><strong>Total</strong></td>
+                                <td id="boardingTotal"><strong>0</strong></td>
+                            </tr>
+                        </tfoot>
                     </table>
+
+                    <h3>Day Scholars</h3>
+                    <table class="fees-table">
+                        <thead>
+                            <tr>
+                                <th>Term</th>
+                                <th>Amount (KSH)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dayFeesTableBody">
+                            <!-- Fees will be populated by JavaScript -->
+                        </tbody>
+                        <tfoot>
+                            <tr class="total-row">
+                                <td><strong>Total</strong></td>
+                                <td id="dayTotal"><strong>0</strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="fees-note">
+                    <p><strong>Note:</strong> Fees are payable at the beginning of each term. Payment plans can be discussed with the administration.</p>
                 </div>
             </div>
 
@@ -196,10 +205,11 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
+            <p id="copyrightText" style="cursor: pointer;">&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Use</a>
+                <span id="adminTrigger" style="display: none; color: #000000; cursor: pointer; font-size: 20px; margin-left: 8px;">·</span>
             </div>
         </div>
     </footer>
@@ -228,6 +238,73 @@
                 menuBtn.textContent = '☰';
             }
         });
+
+        const copyrightText = document.getElementById('copyrightText');
+        const adminTrigger = document.getElementById('adminTrigger');
+        let clickCount = 0;
+
+        copyrightText.addEventListener('click', function() {
+            clickCount++;
+            if (clickCount === 5) {
+                adminTrigger.style.display = 'inline';
+                setTimeout(function() {
+                    adminTrigger.style.display = 'none';
+                    clickCount = 0;
+                }, 5000);
+            }
+        });
+
+        adminTrigger.addEventListener('click', function() {
+            window.location.href = '/admin/login.html';
+        });
+
+        // Function to format number with commas
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // Function to fetch and display fees
+        async function loadFees() {
+            try {
+                const response = await fetch('/api/fees');
+                const fees = await response.json();
+                
+                // Update boarding fees
+                const boardingTableBody = document.getElementById('boardingFeesTableBody');
+                let boardingTotal = 0;
+                
+                for (let i = 1; i <= 3; i++) {
+                    const term = fees.boarding[`term${i}`] || 0;
+                    boardingTotal += term;
+                    const row = `<tr>
+                        <td>Term ${i}</td>
+                        <td>${term.toLocaleString()}</td>
+                    </tr>`;
+                    boardingTableBody.innerHTML += row;
+                }
+                document.getElementById('boardingTotal').textContent = boardingTotal.toLocaleString();
+                
+                // Update day scholar fees
+                const dayTableBody = document.getElementById('dayFeesTableBody');
+                let dayTotal = 0;
+                
+                for (let i = 1; i <= 3; i++) {
+                    const term = fees.day[`term${i}`] || 0;
+                    dayTotal += term;
+                    const row = `<tr>
+                        <td>Term ${i}</td>
+                        <td>${term.toLocaleString()}</td>
+                    </tr>`;
+                    dayTableBody.innerHTML += row;
+                }
+                document.getElementById('dayTotal').textContent = dayTotal.toLocaleString();
+            } catch (error) {
+                console.error('Error loading fees:', error);
+            }
+        }
+
+        // Load fees when the page loads
+        document.addEventListener('DOMContentLoaded', loadFees);
     </script>
 </body>
 </html>

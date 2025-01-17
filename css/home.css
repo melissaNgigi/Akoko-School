@@ -119,8 +119,8 @@
   }
   
   .dropdown-content a:hover {
-    background-color: #f8f9fa;
-    color: #003366;
+    background-color: #f5f5f5;
+    color: #666666;
   }
   
   /* Hero Banner Styles */
@@ -135,7 +135,7 @@
   .hero-image {
     height: 100%;
     width: 100%;
-    background-image: url('../images/school.jpg');
+    background-image: url('../images/school.JPG');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -157,6 +157,7 @@
     font-size: 3.5rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
   }
   
   .overlay-text p {
@@ -167,7 +168,7 @@
   /* Introduction Section Styles */
   .introduction {
     padding: 4rem 0;
-    background-color: #f8f9fa;
+    background-color: #f5f5f5;
   }
   
   .introduction .container {
@@ -188,7 +189,7 @@
   .intro-content h2 {
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
-    color: #003366;
+    color: #666666;
   }
   
   .intro-content p {
@@ -235,7 +236,7 @@
     display: inline-block;
     padding: 1rem 2rem;
     margin-top: 2rem;
-    background-color: #007bff;
+    background-color: #666666;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -243,7 +244,7 @@
   }
   
   .mission-button:hover {
-    background-color: #0056b3;
+    background-color: #777777;
   }
   
   /* Action Boxes Styles */
@@ -288,7 +289,7 @@
 
   .box h2 {
     margin: 1rem 0;
-    color: #003366;
+    color: #666666;
   }
   
   .box p {
@@ -299,7 +300,7 @@
   .box-button {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background-color: #007bff;
+    background-color: #666666;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -307,20 +308,20 @@
   }
   
   .box-button:hover {
-    background-color: #0056b3;
+    background-color: #777777;
   }
   
   .box.academics {
-    background-color: #f8f9fa;
+    background-color: #f5f5f5;
   }
   
   .box.admissions {
-    background-color: #e9ecef;
+    background-color: #f5f5f5;
   }
 
   .campus-life {
     padding: 4rem 0;
-    background-color: #ffffff;
+    background-color: #f5f5f5;
 }
 
 .campus-life .container {
@@ -333,7 +334,7 @@
 }
 
 .campus-life-title h2 {
-    color: #003366;
+    color: #666666;
     font-size: 2.2rem;
     font-weight: bold;
     margin: 0;
@@ -360,7 +361,7 @@
   /* Why Choose Us Styles */
   .why-choose-us {
     padding: 4rem 0;
-    background-color: #36618d;
+    background-color: #898989;
   }
 
   .why-choose-us h2 {
@@ -371,13 +372,13 @@
   }
 
   .why-choose-us .feature h3 {
-    color: white;
+    color: #666666;
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
 
   .why-choose-us .feature p {
-    color: #f8f9fa;
+    color: #333333;
     line-height: 1.6;
   }
 
@@ -397,6 +398,15 @@
   .feature {
     text-align: center;
     padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   .feature img {
@@ -431,4 +441,145 @@
   }
   
   /* Footer styles */
+  
+  .section-title {
+    color: #666666;
+  }
+
+  .news-item h3 {
+    color: #666666;
+  }
+
+  .cta-button {
+    background-color: #666666;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .cta-button:hover {
+    background-color: #777777;
+  }
+  
+  /* Gallery Section Styles */
+  .gallery-section {
+    padding: 4rem 0;
+    background-color: #898989;
+  }
+  
+  .gallery-section h2 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 4/3;
+    cursor: pointer;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  .gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(102, 102, 102, 0.9);
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+  }
+  
+  /* Gallery Modal */
+  .gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding: 2rem;
+  }
+  
+  .modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    margin: auto;
+    position: relative;
+  }
+  
+  .modal-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  
+  /* Info items */
+  .info-item h3 {
+    color: #666666;
+  }
+
+  /* Map Section */
+  .map-section h2 {
+    color: #666666;
+  }
+
+  /* Contact Form */
+  .contact-form h2 {
+    color: #666666;
+  }
+
+  /* Requirement item bullet points */
+  .requirement-item ul li::before {
+    color: #666666;
+  }
+
+  /* Feature headings */
+  .feature h3 {
+    color: #666666;
+  }
   

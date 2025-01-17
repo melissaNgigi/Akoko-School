@@ -34,6 +34,7 @@
                 <a href="#">History</a>
                 <div class="dropdown-content">
                     <a href="history.html">History</a>
+                    <a href="enrollment.html">Student Enrollment</a>
                     <a href="principals.html">Past Principals</a>
                     <a href="performance.html">KCSE Performance</a>
                 </div>
@@ -50,6 +51,9 @@
                             <a href="languages.html">Languages Department</a>
                             <a href="humanities.html">Humanities Department</a>
                             <a href="technical.html">Technical Department</a>
+                +           <a href="academics.html">Academics Department</a>
+                +           <a href="boarding.html">Boarding Department</a>
+                +           <a href="games.html">Games Department</a>
                         </div>
                     </div>
                     <a href="curriculum.html">Co-curricular Activities</a>
@@ -63,7 +67,7 @@
     </nav>
 
     <!-- Hero Banner Section -->
-    <section class="hero-banner" style="background-image: url('images/mission.jpg'); background-size: cover; background-position: center;">
+    <section class="hero-banner" style="background-image: url('images/school.JPG'); background-size: cover; background-position: center;">
         <div class="overlay">
             <div class="overlay-text">
                 <h1>St. Paul's Akoko Secondary School</h1>
@@ -81,25 +85,50 @@
                 <h2 class="section-title">Mission, Vision & Values</h2>
                 
                 <div class="mission-content">
+                    <div class="mission-box"></div>
+                        <h3>Our Motto</h3>
+                        <p>Aspire for Excellence</p>
+                    </div>
+                  <br>
                     <div class="mission-box">
                         <h3>Our Mission</h3>
-                        <p>To provide quality education that nurtures academic excellence, moral values, and holistic development of students, preparing them to be responsible citizens and future leaders.</p>
+                        <p>To nurture holistic learning and life skills through education and community service.</p>
                     </div>
-
+                    <br>
                     <div class="mission-box">
                         <h3>Our Vision</h3>
-                        <p>To be a leading institution in academic excellence and character formation, producing well-rounded individuals who will positively impact society.</p>
+                        <p>To be leading centre for all round education.</p>
                     </div>
+                    <br>
 
                     <div class="mission-box">
                         <h3>Our Core Values</h3>
                         <ul>
-                            <li>Excellence in Education</li>
-                            <li>Integrity and Moral Values</li>
-                            <li>Respect and Discipline</li>
-                            <li>Innovation and Creativity</li>
-                            <li>Community Service</li>
+                            <li>Honesty</li>
+                            <li>Excellence</li>
+                              <p>Spelt out in our motto, our intent is to act in ways that are beyond reproach, by maintaining honesty, accountability and transparency.</p>
+                            <li>Discipline and strong religious values</li>
+                            <li>Teamwork</li>
+                            <p>Our various departments maintain enviable levels of team work.</p>
+                            <li>Hard work and efficiency</li>
+                            <li>Respect for all</li>
+                            <li>Commitment to duty by all</li>
                         </ul>
+
+                    `   <h3>Our core business</h3>
+                        <p>As a registered public school in the Republic of Kenya, we discharge our duties in accordance with the regulations set out to us by the Ministry of Education and its agencies, as well as the laws of the land. </p>
+                        <p>Generally, therefore, our mandate encompasses the following: </p>
+                        <ol>
+                            <li>Implementing the teaching/ learning curriculum as designed by the KICD, MOE and TSC</li>
+                            <li>Inculcating acceptable values that would enable the students to develop a sense of nationhood, be productive in life, and fit within the fast- changing global society. </li>
+                            <li>Providing the opportunities for evocation of talents through co-curricular activities and clubs </li>
+                            <li>Enforcing a corporate social feeling </li>
+                            <li>Providing formative and continuous evaluation to the learners as they prepare for the summative evaluation that KNEC provides</li>
+                            <li>Sensitizing the learners to the rigorous world of tertiary studies and work</li>
+                            <li>Instilling a sense of discipline in the students</li>
+                            <li>Participating in community programmes</li>
+                            <li>Nurturing the religious inclinations of the learners </li>
+                        </ol>
                     </div>
                 </div>
             </div>
@@ -129,10 +158,11 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
+            <p id="copyrightText" style="cursor: pointer;">&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Use</a>
+                <span id="adminTrigger" style="display: none; color: #000000; cursor: pointer; font-size: 20px; margin-left: 8px;">·</span>
             </div>
         </div>
     </footer>
@@ -160,6 +190,25 @@
                 navLinks.classList.remove('active');
                 menuBtn.textContent = '☰';
             }
+        });
+
+        const copyrightText = document.getElementById('copyrightText');
+        const adminTrigger = document.getElementById('adminTrigger');
+        let clickCount = 0;
+
+        copyrightText.addEventListener('click', function() {
+            clickCount++;
+            if (clickCount === 5) {
+                adminTrigger.style.display = 'inline';
+                setTimeout(function() {
+                    adminTrigger.style.display = 'none';
+                    clickCount = 0;
+                }, 5000);
+            }
+        });
+
+        adminTrigger.addEventListener('click', function() {
+            window.location.href = '/admin/login.html';
         });
     </script>
 </body>

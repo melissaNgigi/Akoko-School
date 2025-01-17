@@ -1,0 +1,23 @@
+{
+  "tuition_term1": 1,
+  "tuition_term2": 1,
+  "tuition_term3": 1,
+  "lunch_term1": 1,
+  "lunch_term2": 1,
+  "lunch_term3": 1,
+  "development_term1": 1,
+  "development_term2": 1,
+  "development_term3": 1,
+  "activity_term1": 1,
+  "activity_term2": 1,
+  "activity_term3": 1,
+  "medical_term1": 1,
+  "medical_term2": 1,
+  "medical_term3": 1,
+  "caution_term1": 1,
+  "caution_term2": 1,
+  "caution_term3": 1,
+  "student_id_term1": 1,
+  "student_id_term2": 1,
+  "student_id_term3": 1
+}

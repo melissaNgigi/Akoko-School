@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humanities Department - St. Paul's Akoko Secondary School</title>
+    <title>Humanities Department - St. Paul's Akoko</title>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/departments.css">
@@ -33,6 +33,7 @@
                 <a href="#">History</a>
                 <div class="dropdown-content">
                     <a href="history.html">History</a>
+                    <a href="enrollment.html">Student Enrollment</a>
                     <a href="principals.html">Past Principals</a>
                     <a href="performance.html">KCSE Performance</a>
                 </div>
@@ -49,6 +50,9 @@
                             <a href="languages.html">Languages Department</a>
                             <a href="humanities.html">Humanities Department</a>
                             <a href="technical.html">Technical Department</a>
+                +           <a href="academics.html">Academics Department</a>
+                +           <a href="boarding.html">Boarding Department</a>
+                +           <a href="games.html">Games Department</a>
                         </div>
                     </div>
                     <a href="curriculum.html">Co-curricular Activities</a>
@@ -60,85 +64,46 @@
             <a href="contact.html">Contact</a>
         </div>
     </nav>
-    <!-- Main Content -->
-    <main>
-        <section class="department-section">
-            <div class="container">
-                <div class="department-header">
-                    <h1>Humanities Department</h1>
-                    <div class="hod-profile">
-                        <img src="images/humanities-hod.jpg" alt="Head of Humanities Department">
-                        <div class="hod-info">
-                            <h2>Mr. George Otieno</h2>
-                            <p class="title">Head of Department</p>
-                            <p class="qualification">M.Ed History, B.Ed Arts</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="department-description">
-                    <h2>About the Department</h2>
-                    <p>The Humanities Department at St. Paul's Akoko Secondary School is dedicated to developing students' understanding of human society, culture, and relationships. Our programs in History, Geography, and Religious Education foster critical thinking and cultural awareness.</p>
-                    
-                    <p>Through field trips, interactive learning, and engaging projects, we help students understand the world around them and their role in shaping its future. Our department has maintained excellent performance in KCSE examinations and continues to inspire future leaders in various fields.</p>
-                </div>
-
-                <div class="department-stats">
-                    <div class="stat-card">
-                        <span class="stat-number">7.7</span>
-                        <p>History Mean Grade</p>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">7.6</span>
-                        <p>Geography Mean Grade</p>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">7.8</span>
-                        <p>CRE Mean Grade</p>
-                    </div>
-                </div>
-
-                <div class="staff-section">
-                    <h2>Our Team</h2>
-                    <div class="table-container">
-                        <table class="staff-table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Specialization</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Mr. George Otieno</td>
-                                    <td>History</td>
-                                </tr>
-                                <tr>
-                                    <td>Mrs. Lucy Maina</td>
-                                    <td>Geography</td>
-                                </tr>
-                                <tr>
-                                    <td>Rev. Paul Kimathi</td>
-                                    <td>CRE</td>
-                                </tr>
-                                <tr>
-                                    <td>Ms. Faith Wambui</td>
-                                    <td>History</td>
-                                </tr>
-                                <tr>
-                                    <td>Mr. Brian Oduor</td>
-                                    <td>Geography</td>
-                                </tr>
-                                <tr>
-                                    <td>Mrs. Janet Auma</td>
-                                    <td>CRE</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero-banner">
+        <div class="hero-image">
+            <div class="overlay-text">
+                <h1>Humanities Department</h1>
+                <p>Aspire for Excellence</p>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <main>
+        <div class="department-content">
+            <h1>Humanities Department</h1>
+            
+            <section class="department-intro">
+                <h2>About Our Department</h2>
+                <p>Welcome to the Humanities Department at St. Paul's Akoko Secondary School. Our department focuses on developing students' understanding of human society, history, geography, and business studies.</p>
+                
+                <div class="subjects">
+                    <h3>Subjects Offered:</h3>
+                    <ul>
+                        <li><strong>History:</strong> Study of past events and their impact on society</li>
+                        <li><strong>Geography:</strong> Study of physical and human environments</li>
+                        <li><strong>CRE</strong> Study of religious beliefs and practices</li>
+                        
+                    </ul>
+                </div>
+            </section>
+
+            <section class="staff-section">
+                <h2>Head of Department</h2>
+                <div class="hod-info">
+                    <h3>Head of Department</h3>
+                    <div id="humanitiesHodInfo">
+                        <!-- HOD data will be loaded from CMS -->
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -170,11 +135,6 @@
         </div>
     </footer>
 
-    <script>
-        const menuBtn = document.querySelector('.menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        const dropdowns = document.querySelectorAll('.dropdown');
-        // Rest of the JavaScript code
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>

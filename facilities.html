@@ -33,6 +33,7 @@
                 <a href="#">History</a>
                 <div class="dropdown-content">
                     <a href="history.html">History</a>
+                    <a href="enrollment.html">Student Enrollment</a>
                     <a href="principals.html">Past Principals</a>
                     <a href="performance.html">KCSE Performance</a>
                 </div>
@@ -49,6 +50,9 @@
                             <a href="languages.html">Languages Department</a>
                             <a href="humanities.html">Humanities Department</a>
                             <a href="technical.html">Technical Department</a>
+                +           <a href="academics.html">Academics Department</a>
+                +           <a href="boarding.html">Boarding Department</a>
+                +           <a href="games.html">Games Department</a>
                         </div>
                     </div>
                     <a href="curriculum.html">Co-curricular Activities</a>
@@ -60,12 +64,6 @@
             <a href="contact.html">Contact</a>
         </div>
     </nav>
-    <script>
-        const menuBtn = document.querySelector('.menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        const dropdowns = document.querySelectorAll('.dropdown');
-        // Rest of the JavaScript code
-    </script>
 
     <!-- Main Content -->
     <main>
@@ -79,31 +77,19 @@
         </section>
 
         <section class="facilities-grid">
-            <div class="facility-card">
-                <img src="images/library.jpg" alt="School Library">
-                <div class="facility-info">
-                    <h2>Library</h2>
-                    <p>Our well-stocked library provides a quiet study environment with extensive resources for research and learning.</p>
-                </div>
-            </div>
+            
 
             <div class="facility-card">
-                <img src="images/science-lab.jpg" alt="Science Laboratories">
+                <img src="images/lab.JPG" alt="Science Laboratories">
                 <div class="facility-info">
                     <h2>Science Laboratories</h2>
                     <p>Modern labs for Physics, Chemistry, and Biology equipped with state-of-the-art apparatus.</p>
                 </div>
             </div>
 
+            
             <div class="facility-card">
-                <img src="images/computer-lab.jpg" alt="Computer Laboratory">
-                <div class="facility-info">
-                    <h2>Computer Laboratory</h2>
-                    <p>Fully equipped computer lab with high-speed internet for ICT education and research.</p>
-                </div>
-            </div>
-            <div class="facility-card">
-                <img src="images/dining.jpg" alt="Dining Hall">
+                <img src="images/dining.JPG" alt="Dining Hall">
                 <div class="facility-info">
                     <h2>Dining Hall</h2>
                     <p>Spacious dining facility serving nutritious meals in a clean environment.</p>
@@ -111,28 +97,39 @@
             </div>
 
             <div class="facility-card">
-                <img src="images/sports-field.jpg" alt="Sports Facilities">
+                <img src="images/sports.jpg" alt="Sports Facilities">
                 <div class="facility-info">
                     <h2>Sports Facilities</h2>
-                    <p>Well-maintained fields for football, volleyball, basketball, and athletics.</p>
+                    <p>Well-maintained fields for football, volleyball and athletics.</p>
                 </div>
             </div>
 
+            
+
             <div class="facility-card">
-                <img src="images/assembly.jpg" alt="Assembly Hall">
+                <img src="images/dormitories.JPG" alt="Dormitories">
                 <div class="facility-info">
-                    <h2>Assembly Hall</h2>
-                    <p>Multi-purpose hall for school assemblies, performances, and special events.</p>
+                    <h2>Dormitories</h2>
+                    <p>Comfortable and secure dormitories for boarding students.</p>
                 </div>
             </div>
 
             <div class="facility-card">
-                <img src="images/classrooms.jpg" alt="Classrooms">
+                <img src="images/classrooms.JPG" alt="Classrooms">
                 <div class="facility-info">
                     <h2>Classrooms</h2>
-                    <p>Modern classrooms with proper lighting, ventilation, and learning equipment.</p>
+                    <p>Classrooms with proper lighting, ventilation, and learning equipment.</p>
                 </div>
             </div>
+
+            <div class="facility-card">
+                <img src="images/farm.JPG" alt="Farm">
+                <div class="facility-info">
+                    <h2>Farm</h2>
+                    <p>Farm for agricultural activities and practical learning.</p>
+                </div>
+            </div>
+
         </section>
     </main>
 
@@ -157,12 +154,58 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
+            <p id="copyrightText" style="cursor: pointer;">&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Use</a>
+                <span id="adminTrigger" style="display: none; color: #000000; cursor: pointer; font-size: 20px; margin-left: 8px;">·</span>
             </div>
         </div>
     </footer>
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+                menuBtn.textContent = '☰';
+            }
+        });
+
+        const copyrightText = document.getElementById('copyrightText');
+        const adminTrigger = document.getElementById('adminTrigger');
+        let clickCount = 0;
+
+        copyrightText.addEventListener('click', function() {
+            clickCount++;
+            if (clickCount === 5) {
+                adminTrigger.style.display = 'inline';
+                setTimeout(function() {
+                    adminTrigger.style.display = 'none';
+                    clickCount = 0;
+                }, 5000);
+            }
+        });
+
+        adminTrigger.addEventListener('click', function() {
+            window.location.href = '/admin/login.html';
+        });
+    </script>
 </body>
 </html>
