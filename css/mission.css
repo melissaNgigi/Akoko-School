@@ -37,52 +37,91 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Mission Vision Values Section */
-.mission-section {
-  padding: 4rem 0;
-  background-color: #898989;
-  overflow: hidden;
-}
-
+/* Common container style */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
   width: 100%;
   box-sizing: border-box;
 }
 
-.mission-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+/* Intro Section */
+.intro-section {
+  padding: 3rem 0;
+  background-color: #f5f5f5;
 }
 
-.mission-card {
+
+
+.intro-section p {
+  color: #666;
+  font-size: 1.2em;
+  line-height: 1.8;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Mission Vision Values Section */
+.mission-section {
+  padding: 4rem 0;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+.mission-section .container {
   background: white;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
 }
 
-.mission-card h2 {
-  color: #003366;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.mission-card p {
+.section-title {
   color: #333;
-  line-height: 1.8;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Motto, Mission, Vision Sections - All styled the same */
+.motto, .mission, .vision {
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.motto h3, .mission h3, .vision h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.motto p, .mission p, .vision p {
+  color: #666;
+  font-size: 1.2em;
+  font-style: italic;
 }
 
 /* Core Values Section */
 .values-section {
   padding: 4rem 0;
-  background-color: white;
+  background-color: #f5f5f5;
+}
+
+.values-section .container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.values-section .section-title {
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
 }
 
 .values-grid {
@@ -93,26 +132,12 @@ body {
 }
 
 .value-card {
-  background: #f8f9fa;
+  background: white;
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
   transition: transform 0.3s ease;
-}
-
-.value-card:hover {
-  transform: translateY(-5px);
-}
-
-.value-card h3 {
-  color: #003366;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.value-card p {
-  color: #333;
-  line-height: 1.6;
+  border: 1px solid #eee;
 }
 
 /* Responsive Design */
@@ -126,17 +151,8 @@ body {
     font-size: 2rem;
   }
 
-  .mission-card h2 {
-    font-size: 1.8rem;
-  }
-
-  .mission-section,
-  .values-section {
-    padding: 2rem 0;
-  }
-
   .container {
-    padding: 0 1rem;
+    margin: 0 30px;
   }
 }
 
@@ -146,20 +162,9 @@ body {
   margin-bottom: 1rem;
 }
 
-.mission-content {
-  border-color: #333333;
-}
-
 .mission-text {
   color: white;
   line-height: 1.8;
-}
-
-.section-title {
-  color: white;
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 2rem;
 }
 
 .mission-box {
@@ -217,5 +222,60 @@ body {
   font-style: italic;
   margin: 0 auto;
   max-width: 800px;
+}
+
+.motto {
+  text-align: center;
+  margin: 20px 0 40px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.motto h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.motto p {
+  color: #666;
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+.core-business-section {
+  padding: 4rem 0;
+  background-color: #f5f5f5;
+}
+
+.core-business-section .container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.core-business-section h2.section-title {
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.core-business-section p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.core-business-section ol {
+  color: #666;
+  line-height: 1.8;
+  margin-left: 2rem;
+}
+
+.core-business-section li {
+  margin-bottom: 1rem;
 }
 

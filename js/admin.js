@@ -127,48 +127,57 @@ router.post('/logout', (req, res) => {
     res.json({ success: true });
 });
 
-// Get fees endpoint
-router.get('/get-fees', (req, res) => {
-    if (!req.session.isAdmin) {
-        return res.status(401).json({ success: false, message: 'Not authenticated' });
-    }
-
+// Fees management endpoints
+router.get('/fees', (req, res) => {
     try {
         const fees = JSON.parse(fs.readFileSync(FEES_FILE));
-        res.json({ success: true, fees });
+        // Convert nested structure to flat structure for admin dashboard
+        const flatFees = {
+            'boarding.term1': fees.boarding.term1,
+            'boarding.term2': fees.boarding.term2,
+            'boarding.term3': fees.boarding.term3,
+            'day.term1': fees.day.term1,
+            'day.term2': fees.day.term2,
+            'day.term3': fees.day.term3
+        };
+        res.json(flatFees);
     } catch (error) {
-        res.json({ success: false, message: 'Error reading fees data' });
+        res.status(500).json({ success: false, message: 'Error loading fees' });
     }
 });
 
-// Update fees endpoint
 router.post('/update-fees', (req, res) => {
-    console.log('Received update fees request:', req.body);
     if (!req.session.isAdmin) {
-        console.log('Not authenticated');
         return res.status(401).json({ success: false, message: 'Not authenticated' });
     }
 
     try {
-        const { fees } = req.body;
-        if (!fees) {
-            throw new Error('No fees data received');
-        }
-        console.log('Writing fees to file:', fees);
+        // Convert flat structure from form to nested structure for storage
+        const fees = {
+            boarding: {
+                term1: parseInt(req.body['boarding.term1']) || 0,
+                term2: parseInt(req.body['boarding.term2']) || 0,
+                term3: parseInt(req.body['boarding.term3']) || 0
+            },
+            day: {
+                term1: parseInt(req.body['day.term1']) || 0,
+                term2: parseInt(req.body['day.term2']) || 0,
+                term3: parseInt(req.body['day.term3']) || 0
+            }
+        };
+
         fs.writeFileSync(FEES_FILE, JSON.stringify(fees, null, 2));
-        console.log('Fees updated successfully');
         res.json({ success: true });
     } catch (error) {
-        console.error('Error updating fees:', error);
-        res.status(500).json({ success: false, message: error.message || 'Error updating fees' });
+        res.status(500).json({ success: false, message: 'Error updating fees' });
     }
 });
 
-// Add this new endpoint for public access to fees
+// Public fees endpoint
 router.get('/public-fees', (req, res) => {
     try {
         const fees = JSON.parse(fs.readFileSync(FEES_FILE));
-        res.json({ success: true, fees });
+        res.json({ success: true, fees }); // Return nested structure for client
     } catch (error) {
         res.json({ success: false, message: 'Error reading fees data' });
     }
@@ -177,9 +186,9 @@ router.get('/public-fees', (req, res) => {
 router.get('/get-staff', (req, res) => {
     try {
         const staff = JSON.parse(fs.readFileSync(STAFF_FILE));
-        res.json({ 
-            success: true, 
-            staff: staff[req.query.department] || [] 
+        res.json({
+            success: true,
+            hod: staff[req.query.department] || null
         });
     } catch (error) {
         res.json({ success: false, message: 'Error reading staff data' });
@@ -196,41 +205,31 @@ router.get('/get-staff-member', (req, res) => {
     }
 });
 
-router.post('/update-staff', upload.single('photo'), (req, res) => {
+router.post('/update-staff', (req, res) => {
+    console.log('Received update staff request:', req.body);
     if (!req.session.isAdmin) {
+        console.log('Not authenticated');
         return res.status(401).json({ success: false, message: 'Not authenticated' });
     }
 
     try {
         const staff = JSON.parse(fs.readFileSync(STAFF_FILE));
-        const { id, department, name, position, qualifications } = req.body;
+        const { department, name } = req.body;
         
-        let staffMember = {
-            id: id || `${department}${Date.now()}`,
-            name,
-            position,
-            qualifications,
-            image: req.file ? `/images/staff/${req.file.filename}` : 'default_teacher.jpg'
+        console.log('Current staff data:', staff);
+        console.log('Updating department:', department);
+        console.log('New HOD name:', name);
+        
+        staff[department] = {
+            name
         };
 
-        if (id) {
-            // Update existing staff member
-            const index = staff[department].findIndex(s => s.id === id);
-            if (index !== -1) {
-                if (!req.file) {
-                    staffMember.image = staff[department][index].image;
-                }
-                staff[department][index] = staffMember;
-            }
-        } else {
-            // Add new staff member
-            staff[department].push(staffMember);
-        }
-
         fs.writeFileSync(STAFF_FILE, JSON.stringify(staff, null, 2));
+        console.log('Updated staff data:', staff);
         res.json({ success: true });
     } catch (error) {
-        res.json({ success: false, message: 'Error updating staff' });
+        console.error('Error updating staff:', error);
+        res.status(500).json({ success: false, message: 'Error updating staff' });
     }
 });
 

@@ -35,7 +35,7 @@
                     <a href="history.html">History</a>
                     <a href="enrollment.html">Student Enrollment</a>
                     <a href="principals.html">Past Principals</a>
-                    <a href="performance.html">KCSE Performance</a>
+                    <a href="board-chairs.html">Board Chairs</a>
                 </div>
             </div>
 
@@ -97,9 +97,7 @@
                 <h2>Head of Department</h2>
                 <div class="hod-info">
                     <h3>Head of Department</h3>
-                    <div id="technicalHodInfo">
-                        <!-- HOD data will be loaded from CMS -->
-                    </div>
+                    <p>Mr. Meshack Owiti</p>
                 </div>
             </section>
         </div>
@@ -135,5 +133,23 @@
     </footer>
 
     <script src="main.js"></script>
+    <script>
+        async function loadHOD() {
+            try {
+                const response = await fetch('/admin/get-staff?department=technical');
+                const data = await response.json();
+                if (data.success && data.hod) {
+                    document.getElementById('hodInfo').textContent = data.hod.name;
+                } else {
+                    document.getElementById('hodInfo').textContent = 'Not assigned';
+                }
+            } catch (error) {
+                console.error('Error loading HOD:', error);
+                document.getElementById('hodInfo').textContent = 'Error loading HOD information';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadHOD);
+    </script>
 </body>
 </html> 
