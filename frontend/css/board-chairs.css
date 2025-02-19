@@ -1,0 +1,167 @@
+/* Hero Banner Styles */
+.hero-banner {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin-top: 80px;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/school.JPG');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    text-align: center;
+    color: white;
+}
+
+.overlay-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.overlay-text p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Board Chairs Section */
+.board-chairs-section {
+    padding: 4rem 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.intro-text {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.intro-text p {
+    color: #666;
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Table Styles */
+.table-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+.chairs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 1.1em;
+}
+
+.chairs-table th,
+.chairs-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.chairs-table th {
+    background-color: #f5f5f5;
+    color: #333;
+    font-weight: bold;
+}
+
+.chairs-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.chairs-table td:first-child {
+    width: 80px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-banner {
+        height: 300px;
+        margin-top: 60px;
+    }
+
+    .overlay-text h1 {
+        font-size: 2rem;
+    }
+
+    .overlay-text p {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .chairs-table {
+        font-size: 1em;
+    }
+
+    .chairs-table th,
+    .chairs-table td {
+        padding: 0.75rem;
+    }
+}
+
+/* Board Members Table */
+.board-members-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.board-members-table th,
+.board-members-table td {
+    padding: 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.board-members-table th {
+    background-color: #4a4a4a;
+    color: white;
+    font-weight: 600;
+}
+
+.board-members-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.board-members-table td:first-child {
+    font-weight: 500;
+    color: #333;
+}
+
+.role-cell {
+    color: #666;
+    font-style: italic;
+}
+
+.role-cell {
+    color: #4a4a4a;
+    font-size: 0.9em;
+} 

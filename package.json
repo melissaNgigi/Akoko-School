@@ -1,11 +1,11 @@
 {
   "scripts": {
-    "start": "node server.js"
+    "start": "node backend/server.js"
   },
   "name": "secondary",
   "description": "",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "backend/server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/melissaNgigi/Akoko-School.git"

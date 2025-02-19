@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Chairs - St. Paul's Akoko Secondary School</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/board-chairs.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="images/logo.png" alt="St. Paul's Akoko Logo" class="logo">
+            <span class="school-name">St. Paul's Akoko Secondary School</span>
+        </div>
+        <button class="menu-btn">☰</button>
+        <div class="nav-links">
+            <div class="home-link">
+                <a href="./index.html">Home</a>
+            </div>
+            <div class="dropdown">
+                <a href="#">About Us</a>
+                <div class="dropdown-content">
+                    <a href="mission.html">Mission, Vision & Values</a>
+                    <a href="principals-message.html">Principal's Message</a>
+                    <a href="management.html">Management</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="#">History</a>
+                <div class="dropdown-content">
+                    <a href="history.html">History</a>
+                    <a href="enrollment.html">Student Enrollment</a>
+                    <a href="principals.html">Past Principals</a>
+                    <a href="board-chairs.html">Board Chairs</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="#">Programmes</a>
+                <div class="dropdown-content">
+                    <div class="nested-dropdown">
+                        <a href="#">Academics</a>
+                        <div class="nested-content">
+                            <a href="mathematics.html">Mathematics Department</a>
+                            <a href="science.html">Science Department</a>
+                            <a href="languages.html">Languages Department</a>
+                            <a href="humanities.html">Humanities Department</a>
+                            <a href="technical.html">Technical Department</a>
+                            <a href="academics.html">Academics Department</a>
+                            <a href="boarding.html">Boarding Department</a>
+                            <a href="games.html">Games Department</a>
+                        </div>
+                    </div>
+                    <a href="curriculum.html">Co-curricular Activities</a>
+                </div>
+            </div>
+
+            <a href="facilities.html">Facilities</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-banner">
+        <div class="hero-image">
+            <div class="overlay-text">
+                <h1>Board Chairs</h1>
+                <p>Leadership Through the Years</p>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="board-chairs-section">
+            <div class="container">
+                <div class="intro-text">
+                    <p>The Board of Management (BOM) at St. Paul's Akoko Secondary School has been led by distinguished individuals who have contributed significantly to the school's development and success. Here are the chairpersons who have served our institution:</p>
+                </div>
+                
+                <div class="table-container">
+                    <table class="chairs-table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Name</th>
+                                <th>Period</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Mr. James A. Aremo</td>
+                                <td>1986 - 2011</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Prof. Nicholas Oguge</td>
+                                <td>2018 - 2022</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Dr. Ruth Otieno</td>
+                                <td>2021 - Date</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Board Members Section -->
+        <section class="board-members-section">
+            <div class="container">
+                <h2>Current Board Members</h2>
+                <div class="table-container">
+                    <table class="board-members-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Role</th>
+                            </tr>
+                        </thead>
+                        <tbody id="boardMembersTableBody">
+                            <!-- Table content will be loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Address: West Migwena, Bondo</p>
+                <p>Phone: +254714747213</p>
+                <p>Email: Akokosecondary@yahoo.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="mission.html">Mission & Vision</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add this before the closing </body> tag -->
+    <script>
+    async function loadBoardMembers() {
+        try {
+            const response = await fetch('/admin/board-members');
+            const data = await response.json();
+            
+            const tableBody = document.getElementById('boardMembersTableBody');
+            if (!tableBody) {
+                console.error('Table body element not found');
+                return;
+            }
+
+            console.log('Received board members data:', data); // Debug log
+            
+            if (data.success && data.members) {
+                tableBody.innerHTML = ''; // Clear existing content
+                
+                data.members.forEach(member => {
+                    const row = `
+                        <tr>
+                            <td>${member.name}</td>
+                            <td>${member.position}</td>
+                            <td>${member.role}</td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += row;
+                });
+            } else {
+                console.error('Invalid data structure:', data);
+            }
+        } catch (error) {
+            console.error('Error loading board members:', error);
+        }
+    }
+
+    // Load board members when page loads
+    document.addEventListener('DOMContentLoaded', loadBoardMembers);
+    </script>
+</body>
+</html> 

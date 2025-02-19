@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Enrollment - St. Paul's Akoko Secondary School</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/enrollment.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="images/logo.png" alt="St. Paul's Akoko Logo" class="logo">
+            <span class="school-name">St. Paul's Akoko Secondary School</span>
+        </div>
+        <button class="menu-btn">☰</button>
+        <div class="nav-links">
+            <div class="home-link">
+                <a href="./index.html">Home</a>
+            </div>
+            <div class="dropdown">
+                <a href="#">About Us</a>
+                <div class="dropdown-content">
+                    <a href="mission.html">Mission, Vision & Values</a>
+                    <a href="principals-message.html">Principal's Message</a>
+                    <a href="management.html">Management</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="#">History</a>
+                <div class="dropdown-content">
+                    <a href="history.html">History</a>
+                    <a href="enrollment.html">Student Enrollment</a>
+                    <a href="principals.html">Past Principals</a>
+                    <a href="board-chairs.html">Board Chairs</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="#">Programmes</a>
+                <div class="dropdown-content">
+                    <div class="nested-dropdown">
+                        <a href="#">Academics</a>
+                        <div class="nested-content">
+                            <a href="mathematics.html">Mathematics Department</a>
+                            <a href="science.html">Science Department</a>
+                            <a href="languages.html">Languages Department</a>
+                            <a href="humanities.html">Humanities Department</a>
+                            <a href="technical.html">Technical Department</a>
+                +           <a href="academics.html">Academics Department</a>
+                +           <a href="boarding.html">Boarding Department</a>
+                +           <a href="games.html">Games Department</a>
+                        </div>
+                    </div>
+                    <a href="curriculum.html">Co-curricular Activities</a>
+                </div>
+            </div>
+
+            <a href="facilities.html">Facilities</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-banner">
+        <div class="hero-image">
+            <div class="overlay-text">
+                <h1>Student Enrollment</h1>
+                <p>Aspire for Excellence</p>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="enrollment-content">
+            <h2>Student Population Growth</h2>
+            <p>Our student population has grown significantly over the years, reflecting our commitment to providing quality education to more students in our community.</p>
+            
+            <div class="table-container">
+                <table class="enrollment-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Boys</th>
+                            <th>Girls</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2018</td>
+                            <td>340</td>
+                            <td>220</td>
+                            <td>560</td>
+                        </tr>
+                        <tr>
+                            <td>2019</td>
+                            <td>400</td>
+                            <td>219</td>
+                            <td>619</td>
+                        </tr>
+                        <tr>
+                            <td>2020</td>
+                            <td>600</td>
+                            <td>250</td>
+                            <td>850</td>
+                        </tr>
+                        <tr>
+                            <td>2021</td>
+                            <td>615</td>
+                            <td>346</td>
+                            <td>961</td>
+                        </tr>
+                        <tr>
+                            <td>2022</td>
+                            <td>611</td>
+                            <td>374</td>
+                            <td>985</td>
+                        </tr>
+                        <tr>
+                            <td>2023</td>
+                            <td>627</td>
+                            <td>551</td>
+                            <td>1178</td>
+                        </tr>
+                        <tr>
+                            <td>2024</td>
+                            <td>698</td>
+                            <td>594</td>
+                            <td>1292</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Address: West Migwena, Bondo</p>
+                <p>Phone: +254714747213</p>
+                <p>Email: Akokosecondary@yahoo.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="mission.html">Mission & Vision</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+    // Function to load enrollment data into existing table
+    async function loadEnrollmentData() {
+        try {
+            const response = await fetch('/admin/enrollment');
+            const data = await response.json();
+            
+            if (data.success && data.years) {
+                // Sort years in ascending order
+                const sortedYears = data.years.sort((a, b) => a.year - b.year);
+                
+                // Get the existing table body
+                const tableBody = document.querySelector('.enrollment-table tbody');
+                tableBody.innerHTML = ''; // Clear existing rows
+                
+                // Add rows with data from CMS
+                sortedYears.forEach(year => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${year.year}</td>
+                        <td>${year.boys}</td>
+                        <td>${year.girls}</td>
+                        <td>${year.total}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+        } catch (error) {
+            console.error('Error loading enrollment data:', error);
+        }
+    }
+
+    // Load enrollment data when the page loads
+    document.addEventListener('DOMContentLoaded', loadEnrollmentData);
+    </script>
+</body>
+</html> 
