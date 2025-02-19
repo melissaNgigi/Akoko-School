@@ -83,75 +83,25 @@
                     <p>Our school board comprises dedicated professionals who bring diverse expertise and unwavering commitment to educational excellence. Working collaboratively, they provide strategic guidance and oversight to ensure our institution maintains its high standards while continually evolving to meet the needs of our students and community.</p>
                 </div>
 
-                <div class="board-members">
-                    <h2>Board Members and Their Roles</h2>
-                    <table class="members-table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Role Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Dr. Ruth Otieno</td>
-                                <td>Board Chairperson</td>
-                                <td>Overall leadership and governance of the school board</td>
-                            </tr>
-                            <tr>
-                                <td>Mr. John Ojeya</td>
-                                <td>Principal (Secretary)</td>
-                                <td>School administration and board secretary</td>
-                            </tr>
-                            <tr>
-                                <td>Mr. David Marenya</td>
-                                <td>Vice Chairman</td>
-                                <td>Support chairman and oversee strategic planning</td>
-                            </tr>
-                            <tr>
-                                <td>Mr. Willis Moyi</td>
-                                <td>P.A Chairman</td>
-                                <td>Support chairman and oversee strategic planning</td>
-                            </tr>
-                            <tr>
-                                <td>Mr. Alfred Mwaiba</td>
-                                <td>SDCE</td>
-                                <td>Support chairman and oversee strategic planning</td>
-                            </tr>
-                            <tr>
-                                <td>Mr. Matthews Obwong'</td>
-                                <td>Member</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Mr. Francis Agalo</td>
-                                <td>Member</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Mr. Ambrose Opiyo</td>
-                                <td>Member</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Mrs. Jane Ongong'a</td>
-                                <td>Member</td>
-                                <td></td>
-                            </tr>
-                            <tr></tr>
-                                <td>Rev. Patrick Ochieng'</td>
-                                <td>Member</td>
-                                <td></td>
-                            </tr>
-                            <tr></tr>
-                                <td>Mr. Antony Orege</td>
-                                <td>Member</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <section class="board-members-section">
+                    <div class="container">
+                        <h2>Current Board Members</h2>
+                        <div class="table-container">
+                            <table class="board-members-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Role</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="boardMembersTableBody">
+                                    <!-- Table content will be loaded dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
     </main>
@@ -186,8 +136,8 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
-    <script>
+    <script src="/js/main.js"></script>
+    <!--<script>
         const copyrightText = document.getElementById('copyrightText');
         const adminTrigger = document.getElementById('adminTrigger');
         let clickCount = 0;
@@ -206,6 +156,46 @@
         adminTrigger.addEventListener('click', function() {
             window.location.href = '/admin/login.html';
         });
-    </script>
-</body>
+    </script> -->
+
+    <script>
+        async function loadBoardMembers() {
+            try {
+                const response = await fetch('/admin/board-members');
+                const data = await response.json();
+                
+                const tableBody = document.getElementById('boardMembersTableBody');
+                if (!tableBody) {
+                    console.error('Table body element not found');
+                    return;
+                }
+    
+                console.log('Received board members data:', data); // Debug log
+                
+                if (data.success && data.members) {
+                    tableBody.innerHTML = ''; // Clear existing content
+                    
+                    data.members.forEach(member => {
+                        const row = `
+                            <tr>
+                                <td>${member.name}</td>
+                                <td>${member.position}</td>
+                                <td>${member.role}</td>
+                            </tr>
+                        `;
+                        tableBody.innerHTML += row;
+                    });
+                } else {
+                    console.error('Invalid data structure:', data);
+                }
+            } catch (error) {
+                console.error('Error loading board members:', error);
+            }
+        }
+    
+        // Load board members when page loads
+        document.addEventListener('DOMContentLoaded', loadBoardMembers);
+        </script>
+        
+</body
 </html>

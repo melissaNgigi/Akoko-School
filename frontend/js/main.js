@@ -69,4 +69,34 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-}); 
+});
+
+// Function to load board members
+async function loadBoardMembers() {
+    try {
+        const response = await fetch('/admin/board-members');
+        const data = await response.json();
+        
+        if (data.success && data.members) {
+            const tbody = document.querySelector('.members-table tbody');
+            if (tbody) {
+                tbody.innerHTML = ''; // Clear existing content
+                
+                data.members.forEach(member => {
+                    tbody.innerHTML += `
+                        <tr>
+                            <td>${member.name}</td>
+                            <td>${member.position}</td>
+                            <td>${member.role || ''}</td>
+                        </tr>
+                    `;
+                });
+            }
+        }
+    } catch (error) {
+        console.error('Error loading board members:', error);
+    }
+}
+
+// Load board members when page loads
+document.addEventListener('DOMContentLoaded', loadBoardMembers); 

@@ -114,25 +114,7 @@
         </section>
 
         <!-- Board Members Section -->
-        <section class="board-members-section">
-            <div class="container">
-                <h2>Current Board Members</h2>
-                <div class="table-container">
-                    <table class="board-members-table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Role</th>
-                            </tr>
-                        </thead>
-                        <tbody id="boardMembersTableBody">
-                            <!-- Table content will be loaded dynamically -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+        
     </main>
 
     <!-- Footer -->
@@ -164,44 +146,7 @@
         </div>
     </footer>
 
-    <!-- Add this before the closing </body> tag -->
-    <script>
-    async function loadBoardMembers() {
-        try {
-            const response = await fetch('/admin/board-members');
-            const data = await response.json();
-            
-            const tableBody = document.getElementById('boardMembersTableBody');
-            if (!tableBody) {
-                console.error('Table body element not found');
-                return;
-            }
-
-            console.log('Received board members data:', data); // Debug log
-            
-            if (data.success && data.members) {
-                tableBody.innerHTML = ''; // Clear existing content
-                
-                data.members.forEach(member => {
-                    const row = `
-                        <tr>
-                            <td>${member.name}</td>
-                            <td>${member.position}</td>
-                            <td>${member.role}</td>
-                        </tr>
-                    `;
-                    tableBody.innerHTML += row;
-                });
-            } else {
-                console.error('Invalid data structure:', data);
-            }
-        } catch (error) {
-            console.error('Error loading board members:', error);
-        }
-    }
-
-    // Load board members when page loads
-    document.addEventListener('DOMContentLoaded', loadBoardMembers);
-    </script>
+  
+    
 </body>
 </html> 
