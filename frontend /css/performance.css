@@ -1,0 +1,180 @@
+/* Hero Banner Styles */
+.hero-banner {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.hero-image {
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/school.JPG');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    width: 80%;
+    max-width: 800px;
+}
+
+.overlay-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.overlay-text p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Performance Section */
+.performance-section {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Line Graph Section */
+.charts-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+.chart-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.chart-container h3 {
+    color: #666666;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Performance Table */
+.table-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.performance-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.performance-table th,
+.performance-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.performance-table th {
+    background-color: #898989;
+    color: white;
+    font-weight: 600;
+}
+
+.performance-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Line Chart Styles */
+.line-chart {
+    --chart-color: #666666;
+    --chart-hover: #898989;
+}
+
+.line-chart .line {
+    stroke: #666666;
+}
+
+.line-chart .point {
+    fill: #666666;
+}
+
+.line-chart .point:hover {
+    fill: #898989;
+}
+
+/* Chart Axes */
+.chart-container .axis line,
+.chart-container .axis path {
+    stroke: #666666;
+}
+
+.chart-container .axis text {
+    fill: #666666;
+}
+
+/* Chart Grid */
+.chart-container .grid line {
+    stroke: #e0e0e0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-banner {
+        height: 300px;
+        margin-top: 120px;
+    }
+
+    .overlay-text h1 {
+        font-size: 2rem;
+    }
+
+    .overlay-text p {
+        font-size: 1.2rem;
+    }
+
+    .charts-section {
+        grid-template-columns: 1fr;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .performance-table {
+        min-width: 600px;
+    }
+
+    .stat-item {
+        min-width: 150px;
+    }
+} 
