@@ -73,7 +73,7 @@ function initFeesForm() {
         };
 
         try {
-            const response = await fetch('/https://akoko-backend.onrender.comadmin/update-fees', {
+            const response = await fetch('https://akoko-backend.onrender.com/admin/update-fees', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -300,7 +300,7 @@ function initLogout() {
     if (logoutButton) {
         logoutButton.addEventListener('click', async () => {
             try {
-                const response = await fetch('/https://akoko-backend.onrender.com/admin/logout', {
+                const response = await fetch('https://akoko-backend.onrender.com/admin/logout', {
                     method: 'POST'
                 });
 
