@@ -1,0 +1,585 @@
+/* General styles for the page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Body styling */
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    background-color: #003366;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo and school name */
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .logo {
+    height: 50px;
+    width: auto;
+  }
+  
+  .school-name {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  /* Main navigation links */
+  .nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  /* Dropdown styles */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown > a {
+    padding-right: 20px;
+  }
+  
+  .dropdown > a::after {
+    content: '▼';
+    font-size: 0.7em;
+    margin-left: 5px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 4px;
+    top: 100%;
+    left: 0;
+  }
+  
+  .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+  }
+  
+  /* Nested dropdown for Academics */
+  .nested-dropdown {
+    position: relative;
+  }
+  
+  .nested-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+  }
+  
+  /* Hover effects */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .nested-dropdown:hover .nested-content {
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f5f5f5;
+    color: #666666;
+  }
+  
+  /* Hero Banner Styles */
+  .hero-banner {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 80px; /* Height of navbar */
+  }
+  
+  .hero-image {
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/school.JPG');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    width: 80%;
+    max-width: 800px;
+  }
+  
+  .overlay-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+  }
+  
+  .overlay-text p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Introduction Section Styles */
+  .introduction {
+    padding: 4rem 0;
+    background-color: #f5f5f5;
+  }
+  
+  .introduction .container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+  
+  .intro-content {
+    flex: 1;
+    text-align: left;
+    padding-right: 2rem;
+  }
+  
+  .intro-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #666666;
+  }
+  
+  .intro-content p {
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .intro-image {
+    flex: 1;
+    position: relative;
+    padding-left: 2rem;
+    max-width: 550px;
+  }
+  
+  .intro-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive design for introduction section */
+  @media (max-width: 992px) {
+    .introduction .container {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 30px;
+    }
+    
+    .intro-content {
+        text-align: center;
+    }
+    
+    .intro-image {
+        order: -1; /* Makes image appear above text on mobile */
+    }
+    
+    .intro-image img {
+        max-width: 100%;
+    }
+  }
+  
+  .mission-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    background-color: #666666;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .mission-button:hover {
+    background-color: #777777;
+  }
+  
+  /* Action Boxes Styles */
+  .action-boxes {
+    padding: 4rem 0;
+  }
+  
+  .action-boxes .container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+  
+  .box {
+    flex: 1;
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures image stays within border radius */
+  }
+  
+  .academics-image {
+    width: 200px;
+    height: 100px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures image covers area without distortion */
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+
+  .admission-image {
+    width: 100px;
+    height: 100px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures image covers area without distortion */
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+
+  .box h2 {
+    margin: 1rem 0;
+    color: #666666;
+  }
+  
+  .box p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .box-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #666666;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .box-button:hover {
+    background-color: #777777;
+  }
+  
+  .box.academics {
+    background-color: #f5f5f5;
+  }
+  
+  .box.admissions {
+    background-color: #f5f5f5;
+  }
+
+  .campus-life {
+    padding: 4rem 0;
+    background-color: #f5f5f5;
+}
+
+.campus-life .container {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.campus-life-title h2 {
+    color: #666666;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.campus-life-content {
+    flex: 1;
+}
+
+.campus-life-content p {
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .campus-life .container {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 30px;
+    }
+}
+  
+  /* Why Choose Us Styles */
+  .why-choose-us {
+    padding: 4rem 0;
+    background-color: #898989;
+  }
+
+  .why-choose-us h2 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .why-choose-us .feature h3 {
+    color: #666666;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .why-choose-us .feature p {
+    color: #333333;
+    line-height: 1.6;
+  }
+
+  .why-choose-us .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+  
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .feature {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .action-boxes .container {
+      flex-direction: column;
+      padding: 0 30px;
+    }
+    
+    .box {
+        margin-bottom: 2rem;
+    }
+    
+    .hero-banner {
+      height: 400px;
+      margin-top: 120px;
+    }
+    
+    .overlay-text h1 {
+      font-size: 2.5rem;
+    }
+    
+    .overlay-text p {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* Footer styles */
+  
+  .section-title {
+    color: #666666;
+  }
+
+  .news-item h3 {
+    color: #666666;
+  }
+
+  .cta-button {
+    background-color: #666666;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .cta-button:hover {
+    background-color: #777777;
+  }
+  
+  /* Gallery Section Styles */
+  .gallery-section {
+    padding: 4rem 0;
+    background-color: #898989;
+  }
+  
+  .gallery-section h2 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 4/3;
+    cursor: pointer;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  .gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(102, 102, 102, 0.9);
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+  }
+  
+  /* Gallery Modal */
+  .gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding: 2rem;
+  }
+  
+  .modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    margin: auto;
+    position: relative;
+  }
+  
+  .modal-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  
+  /* Info items */
+  .info-item h3 {
+    color: #666666;
+  }
+
+  /* Map Section */
+  .map-section h2 {
+    color: #666666;
+  }
+
+  /* Contact Form */
+  .contact-form h2 {
+    color: #666666;
+  }
+
+  /* Requirement item bullet points */
+  .requirement-item ul li::before {
+    color: #666666;
+  }
+
+  /* Feature headings */
+  .feature h3 {
+    color: #666666;
+  }
+  

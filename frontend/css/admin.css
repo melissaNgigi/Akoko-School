@@ -1,0 +1,189 @@
+/* Admin Login Styles */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.login-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Admin Dashboard Styles */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-nav {
+    width: 250px;
+    background: #003366;
+    color: white;
+    padding: 2rem;
+}
+
+.admin-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    display: block;
+}
+
+.admin-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Content Editor Styles */
+.content-editor {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Edit Button Styles */
+.edit-btn, .delete-btn {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #4a4a4a;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #666;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Board Members Table Styles */
+#boardMembersTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#boardMembersTable th,
+#boardMembersTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+#boardMembersTable th {
+    background-color: #4a4a4a;
+    color: white;
+    font-weight: 500;
+}
+
+#boardMembersTable tr:hover {
+    background-color: #f8f9fa;
+}
+
+.role-cell {
+    max-width: 300px;
+    color: #666;
+}
+
+.actions-cell {
+    white-space: nowrap;
+    width: 150px;
+}
+
+/* Form Styles */
+#boardMemberForm {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+#boardMemberForm .form-group {
+    margin-bottom: 15px;
+}
+
+#boardMemberForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+#boardMemberForm input,
+#boardMemberForm textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#boardMemberForm button {
+    background-color: #4a4a4a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#boardMemberForm button:hover {
+    background-color: #666;
+}
+
+/* Add these styles to your admin.css */
+.enrollment-table-container {
+    margin-bottom: 2rem;
+}
+
+.enrollment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.enrollment-table th,
+.enrollment-table td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.enrollment-table th {
+    background-color: #f5f5f5;
+}
+
+.add-enrollment-form {
+    max-width: 400px;
+    margin-top: 2rem;
+}
+
+.add-enrollment-form .form-group {
+    margin-bottom: 1rem;
+} 

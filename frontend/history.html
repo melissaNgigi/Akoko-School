@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - St. Paul's Akoko Secondary School</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/history.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="images/logo.png" alt="St. Paul's Akoko Logo" class="logo">
+            <span class="school-name">St. Paul's Akoko Secondary School</span>
+        </div>
+        <button class="menu-btn">☰</button>
+        <div class="nav-links">
+            <div class="home-link">
+                <a href="./index.html">Home</a>
+            </div>
+            <div class="dropdown">
+                <a href="#">About Us</a>
+                <div class="dropdown-content">
+                    <a href="mission.html">Mission, Vision & Values</a>
+                    <a href="principals-message.html">Principal's Message</a>
+                    <a href="management.html">Management</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="#">History</a>
+                <div class="dropdown-content">
+                    <a href="history.html">History</a>
+                    <a href="enrollment.html">Student Enrollment</a>
+                    <a href="principals.html">Past Principals</a>
+                    <a href="board-chairs.html">Board Chairs</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="#">Programmes</a>
+                <div class="dropdown-content">
+                    <div class="nested-dropdown">
+                        <a href="#">Academics</a>
+                        <div class="nested-content">
+                            <a href="mathematics.html">Mathematics Department</a>
+                            <a href="science.html">Science Department</a>
+                            <a href="languages.html">Languages Department</a>
+                            <a href="humanities.html">Humanities Department</a>
+                            <a href="technical.html">Technical Department</a>
+                +           <a href="academics.html">Academics Department</a>
+                +           <a href="boarding.html">Boarding Department</a>
+                +           <a href="games.html">Games Department</a>
+                        </div>
+                    </div>
+                    <a href="curriculum.html">Co-curricular Activities</a>
+                </div>
+            </div>
+
+            <a href="facilities.html">Facilities</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-banner">
+        <div class="hero-image">
+            <div class="overlay-text">
+                <h1>Our History</h1>
+                <p>A Legacy of Excellence Since Establishment</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <section class="history-section">
+            <div class="container">
+                <div class="history-content">
+                    <h2>Our Journey Through Time</h2>
+                    <p>St. Paul's Akoko Mixed Secondary School is a seven streamed county public institution located in Akoko village, Central Sakwa location Bondo Sub-county in Siaya County. The school was established in the year 1986 with the first Principal of the school being Mr. Nestor C Ndolo </p>
+                    <p>Since then, the school has grown in terms of the quality and quantity of the infrastructure. The main financial contributors to the growth of the facilities are CDF, parents and MOE. The school has also grown in terms of student enrolment. There were 25 students in 1986 when the school was founded. The current student population stands at 1294. </p>
+                    <p>On religious affiliation, the School is sponsored by Anglican Church of Kenya</p>
+                </div>
+
+                <div class="history-buttons">
+                    <a href="principals.html" class="history-button">
+                        <div class="button-content">
+                            <h3>Past Principals</h3>
+                            <p>Learn about the visionary leaders who have guided our institution</p>
+                        </div>
+                    </a>
+                    <a href="board-chairs.html" class="history-button">
+                        <div class="button-content">
+                            <h3>Board Chairs</h3>
+                            <p>Learn about the visionary leaders who have guided our institution</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Address: West Migwena, Bondo</p>
+                <p>Phone: +254714747213</p>
+                <p>Email: Akokosecondary@yahoo.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="mission.html">Mission & Vision</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p id="copyrightText" style="cursor: pointer;">&copy; 2024 St. Paul's Akoko Secondary School. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+                <span id="adminTrigger" style="display: none; color: #000000; cursor: pointer; font-size: 20px; margin-left: 8px;">·</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+        const copyrightText = document.getElementById('copyrightText');
+        const adminTrigger = document.getElementById('adminTrigger');
+        let clickCount = 0;
+
+        copyrightText.addEventListener('click', function() {
+            clickCount++;
+            if (clickCount === 5) {
+                adminTrigger.style.display = 'inline';
+                setTimeout(function() {
+                    adminTrigger.style.display = 'none';
+                    clickCount = 0;
+                }, 5000);
+            }
+        });
+
+        adminTrigger.addEventListener('click', function() {
+            window.location.href = '/admin/login.html';
+        });
+    </script>
+</body>
+</html>
